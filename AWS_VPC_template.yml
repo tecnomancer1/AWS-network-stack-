@@ -6,8 +6,8 @@ Metadata:
         width: 1890
         height: 1000
       position:
-        x: -130
-        'y': 270
+        x: -720
+        'y': 380
       z: 0
       embeds:
         - 3c74a295-8a01-4b6f-9085-3791cb237828
@@ -21,38 +21,41 @@ Metadata:
         width: 470
         height: 290
       position:
-        x: -70
-        'y': 340
+        x: -660
+        'y': 450
       z: 1
       parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
-      embeds: []
+      embeds:
+        - a39ba498-9fa2-43a6-acce-96b0a1d8c1ef
     8d838283-135a-4538-b69d-ace7c475514f:
       size:
         width: 540
         height: 330
       position:
-        x: 540
-        'y': 310
+        x: -50
+        'y': 420
       z: 1
       parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
-      embeds: []
+      embeds:
+        - 7175e9ff-d7e8-4e27-88d5-7d7fdb45a267
     0809b2eb-369c-41f0-bf53-bce737b7e7ae:
       size:
         width: 450
         height: 320
       position:
-        x: 1200
-        'y': 320
+        x: 610
+        'y': 430
       z: 1
       parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
-      embeds: []
+      embeds:
+        - dfe2e52d-3954-472c-ab08-fc189412c06f
     c6c40432-a863-4b5f-a4d8-47dda49c861c:
       size:
         width: 510
         height: 310
       position:
-        x: -80
-        'y': 800
+        x: -670
+        'y': 910
       z: 1
       parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
       embeds: []
@@ -61,8 +64,8 @@ Metadata:
         width: 550
         height: 320
       position:
-        x: 530
-        'y': 790
+        x: -60
+        'y': 900
       z: 1
       parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
       embeds: []
@@ -71,11 +74,49 @@ Metadata:
         width: 480
         height: 330
       position:
-        x: 1190
-        'y': 810
+        x: 600
+        'y': 920
       z: 1
       parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
       embeds: []
+    a39ba498-9fa2-43a6-acce-96b0a1d8c1ef:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -610
+        'y': 500
+      z: 2
+      parent: 358d871b-95d8-4e65-a91d-72e3ac445d68
+      embeds: []
+      iscontainedinside:
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
+    7175e9ff-d7e8-4e27-88d5-7d7fdb45a267:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -30
+        'y': 450
+      z: 2
+      parent: 8d838283-135a-4538-b69d-ace7c475514f
+      embeds: []
+      iscontainedinside:
+        - 8d838283-135a-4538-b69d-ace7c475514f
+        - 8d838283-135a-4538-b69d-ace7c475514f
+    dfe2e52d-3954-472c-ab08-fc189412c06f:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 630
+        'y': 460
+      z: 2
+      parent: 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+      iscontainedinside:
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
 Resources:
   myStackVpc:
     Type: 'AWS::EC2::VPC'
@@ -119,3 +160,27 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 3c74a295-8a01-4b6f-9085-3791cb237828
+  MyStackWebServer1:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      NetworkInterfaces:
+        - SubnetId: !Ref PublicSubnet1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: a39ba498-9fa2-43a6-acce-96b0a1d8c1ef
+  MyStackWebServer2:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      NetworkInterfaces:
+        - SubnetId: !Ref PublicSubnet2
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 7175e9ff-d7e8-4e27-88d5-7d7fdb45a267
+  MyStackWebServer3:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      NetworkInterfaces:
+        - SubnetId: !Ref PublicSubnet3
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: dfe2e52d-3954-472c-ab08-fc189412c06f
