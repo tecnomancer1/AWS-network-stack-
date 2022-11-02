@@ -16,13 +16,15 @@ Metadata:
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
         - 8d838283-135a-4538-b69d-ace7c475514f
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - ddb9de6a-2c82-43e8-ada5-952a3d976548
+        - bddcbbc4-e9e0-4331-8e72-1dc59078f70a
     358d871b-95d8-4e65-a91d-72e3ac445d68:
       size:
-        width: 470
-        height: 290
+        width: 480
+        height: 310
       position:
-        x: -660
-        'y': 450
+        x: -670
+        'y': 430
       z: 1
       parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
       embeds:
@@ -93,6 +95,8 @@ Metadata:
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
     7175e9ff-d7e8-4e27-88d5-7d7fdb45a267:
       size:
         width: 60
@@ -106,6 +110,8 @@ Metadata:
       iscontainedinside:
         - 8d838283-135a-4538-b69d-ace7c475514f
         - 8d838283-135a-4538-b69d-ace7c475514f
+        - 8d838283-135a-4538-b69d-ace7c475514f
+        - 8d838283-135a-4538-b69d-ace7c475514f
     dfe2e52d-3954-472c-ab08-fc189412c06f:
       size:
         width: 60
@@ -115,8 +121,35 @@ Metadata:
         'y': 460
       z: 2
       parent: 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+      embeds: []
       iscontainedinside:
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+    ddb9de6a-2c82-43e8-ada5-952a3d976548:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -150
+        'y': 450
+      z: 1
+      parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
+      embeds: []
+      iscontainedinside:
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+    bddcbbc4-e9e0-4331-8e72-1dc59078f70a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -140
+        'y': 830
+      z: 1
+      parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
+      iscontainedinside:
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
 Resources:
   myStackVpc:
     Type: 'AWS::EC2::VPC'
@@ -184,3 +217,17 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: dfe2e52d-3954-472c-ab08-fc189412c06f
+  MyStackPublicSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref myStackVpc
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: ddb9de6a-2c82-43e8-ada5-952a3d976548
+  MyStackPrivateSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref myStackVpc
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: bddcbbc4-e9e0-4331-8e72-1dc59078f70a
