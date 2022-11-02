@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: 
+Description: CloudFormation template to deploy network stack
+
+
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 
+        Ref: mystackcidrBlock
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      InstanceTenancy: default

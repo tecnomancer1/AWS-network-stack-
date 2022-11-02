@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    edef8a41-9c1d-46eb-a29f-a72f78c8446a:
+      size:
+        width: 950
+        height: 480
+      position:
+        x: -34
+        'y': 270
+      z: 0
+Resources:
+  myStackVpc:
+    Type: 'AWS::EC2::VPC'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: edef8a41-9c1d-46eb-a29f-a72f78c8446a
