@@ -294,11 +294,11 @@ Metadata:
         - f83697cd-122c-4f9b-9248-b6d3aef6d000
     4e4255f7-ce2c-4954-8a63-298b18122f15:
       size:
-        width: 140
-        height: 140
+        width: 330
+        height: 150
       position:
-        x: 1173.1251287989069
-        'y': 815.356242154058
+        x: 1173
+        'y': 805
       z: 1
       parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
       embeds:
@@ -343,6 +343,7 @@ Metadata:
       dependson:
         - 3c74a295-8a01-4b6f-9085-3791cb237828
         - a6ed308e-77cd-4b76-8d28-7e5d4f09694a
+        - bddcbbc4-e9e0-4331-8e72-1dc59078f70a
     08676474-187a-4a28-a395-d086004e9213:
       size:
         width: 60
@@ -360,6 +361,7 @@ Metadata:
         - 07334a8b-ada4-4dd4-9446-03492f68ccc4
       dependson:
         - a6ed308e-77cd-4b76-8d28-7e5d4f09694a
+        - bddcbbc4-e9e0-4331-8e72-1dc59078f70a
     85156df1-c327-4402-88c4-a588589abc2c:
       source:
         id: a6ed308e-77cd-4b76-8d28-7e5d4f09694a
@@ -389,6 +391,9 @@ Metadata:
       iscontainedinside:
         - c6c40432-a863-4b5f-a4d8-47dda49c861c
         - c6c40432-a863-4b5f-a4d8-47dda49c861c
+      dependson:
+        - a6ed308e-77cd-4b76-8d28-7e5d4f09694a
+        - bddcbbc4-e9e0-4331-8e72-1dc59078f70a
     f186442b-6d7e-4e3f-80b8-9740b4769baf:
       source:
         id: a84478a6-0609-44dd-ad48-e324dbea40f3
@@ -401,6 +406,30 @@ Metadata:
       target:
         id: a6ed308e-77cd-4b76-8d28-7e5d4f09694a
       z: 4
+    ae40809a-ab50-4649-a805-a926b9dfc9a1:
+      source:
+        id: 0f7d1ac0-b0b6-4fc4-9733-157b2d4530a0
+      target:
+        id: a6ed308e-77cd-4b76-8d28-7e5d4f09694a
+      z: 5
+    b9451d4c-74f7-45e6-ab70-f8a3f5286311:
+      source:
+        id: 0f7d1ac0-b0b6-4fc4-9733-157b2d4530a0
+      target:
+        id: bddcbbc4-e9e0-4331-8e72-1dc59078f70a
+      z: 6
+    75c9df4e-cf2a-4306-a817-eedcfdacb808:
+      source:
+        id: 08676474-187a-4a28-a395-d086004e9213
+      target:
+        id: bddcbbc4-e9e0-4331-8e72-1dc59078f70a
+      z: 7
+    9817f5e4-8bf7-4c7b-bf3d-c06066a440e6:
+      source:
+        id: a84478a6-0609-44dd-ad48-e324dbea40f3
+      target:
+        id: bddcbbc4-e9e0-4331-8e72-1dc59078f70a
+      z: 8
 Resources:
   myStackVpc:
     Type: 'AWS::EC2::VPC'
@@ -583,6 +612,7 @@ Resources:
     DependsOn:
       - PrivateSubnet3
       - PrivateRoute
+      - MyStackPrivateSG
   MyStackDBS2:
     Type: 'AWS::EC2::Instance'
     Properties:
@@ -596,11 +626,16 @@ Resources:
         id: 08676474-187a-4a28-a395-d086004e9213
     DependsOn:
       - PrivateRoute
+      - MyStackPrivateSG
   EC2IB70I:
     Type: 'AWS::EC2::Instance'
     Properties:
       NetworkInterfaces:
         - SubnetId: !Ref PrivateSubnet1
+        - SubnetId: !Ref PrivateSubnet1
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 0f7d1ac0-b0b6-4fc4-9733-157b2d4530a0
+    DependsOn:
+      - PrivateRoute
+      - MyStackPrivateSG
