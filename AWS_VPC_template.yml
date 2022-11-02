@@ -16,8 +16,8 @@ Metadata:
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
         - 8d838283-135a-4538-b69d-ace7c475514f
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
-        - ddb9de6a-2c82-43e8-ada5-952a3d976548
         - bddcbbc4-e9e0-4331-8e72-1dc59078f70a
+        - ddb9de6a-2c82-43e8-ada5-952a3d976548
     358d871b-95d8-4e65-a91d-72e3ac445d68:
       size:
         width: 480
@@ -97,6 +97,8 @@ Metadata:
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
     7175e9ff-d7e8-4e27-88d5-7d7fdb45a267:
       size:
         width: 60
@@ -108,6 +110,8 @@ Metadata:
       parent: 8d838283-135a-4538-b69d-ace7c475514f
       embeds: []
       iscontainedinside:
+        - 8d838283-135a-4538-b69d-ace7c475514f
+        - 8d838283-135a-4538-b69d-ace7c475514f
         - 8d838283-135a-4538-b69d-ace7c475514f
         - 8d838283-135a-4538-b69d-ace7c475514f
         - 8d838283-135a-4538-b69d-ace7c475514f
@@ -126,6 +130,8 @@ Metadata:
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
     ddb9de6a-2c82-43e8-ada5-952a3d976548:
       size:
         width: 60
@@ -139,6 +145,8 @@ Metadata:
       iscontainedinside:
         - edef8a41-9c1d-46eb-a29f-a72f78c8446a
         - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
     bddcbbc4-e9e0-4331-8e72-1dc59078f70a:
       size:
         width: 60
@@ -148,8 +156,26 @@ Metadata:
         'y': 830
       z: 1
       parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
+      embeds: []
       iscontainedinside:
         - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+    f83697cd-122c-4f9b-9248-b6d3aef6d000:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -950.8714952146904
+        'y': 196.49442696565615
+      z: 0
+      embeds: []
+    12710065-cd43-4a73-bdeb-66f1a170730d:
+      source:
+        id: f83697cd-122c-4f9b-9248-b6d3aef6d000
+      target:
+        id: edef8a41-9c1d-46eb-a29f-a72f78c8446a
+      z: 3
 Resources:
   myStackVpc:
     Type: 'AWS::EC2::VPC'
@@ -231,3 +257,17 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: bddcbbc4-e9e0-4331-8e72-1dc59078f70a
+  MyStackIG:
+    Type: 'AWS::EC2::InternetGateway'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: f83697cd-122c-4f9b-9248-b6d3aef6d000
+  MyStackIGAttachment:
+    Type: 'AWS::EC2::VPCGatewayAttachment'
+    Properties:
+      InternetGatewayId: !Ref MyStackIG
+      VpcId: !Ref myStackVpc
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 12710065-cd43-4a73-bdeb-66f1a170730d
