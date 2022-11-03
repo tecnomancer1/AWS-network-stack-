@@ -10,6 +10,9 @@ Metadata:
         'y': 540
       z: 1
       embeds:
+        - 4b34954a-8b6d-4c91-abc8-e0bdcfaaa28a
+        - c7174ea7-8697-42fc-a641-0fc8f18c52c8
+        - 2aa1b7a8-f865-4a80-8e09-2954bf505475
         - 3159d68f-4c98-4c2b-8950-8988378cb3e4
         - c4b55c2c-b855-45b9-8dd8-e4b838754641
         - ce1e3ad5-89e8-4b75-8bfe-0ce7ed7672dc
@@ -83,6 +86,11 @@ Metadata:
         - 3cd0dd39-c481-4ec2-88d6-92ba196e858b
         - 3cd0dd39-c481-4ec2-88d6-92ba196e858b
         - 3cd0dd39-c481-4ec2-88d6-92ba196e858b
+        - 3cd0dd39-c481-4ec2-88d6-92ba196e858b
+        - 3cd0dd39-c481-4ec2-88d6-92ba196e858b
+        - 3cd0dd39-c481-4ec2-88d6-92ba196e858b
+        - 3cd0dd39-c481-4ec2-88d6-92ba196e858b
+        - 3cd0dd39-c481-4ec2-88d6-92ba196e858b
       dependson:
         - 6b1e4543-dce7-40a3-a170-a97e8059a462
     ce1e3ad5-89e8-4b75-8bfe-0ce7ed7672dc:
@@ -96,6 +104,11 @@ Metadata:
       parent: 777c1d51-3012-4805-b84d-08367ebbd2c7
       embeds: []
       iscontainedinside:
+        - 777c1d51-3012-4805-b84d-08367ebbd2c7
+        - 777c1d51-3012-4805-b84d-08367ebbd2c7
+        - 777c1d51-3012-4805-b84d-08367ebbd2c7
+        - 777c1d51-3012-4805-b84d-08367ebbd2c7
+        - 777c1d51-3012-4805-b84d-08367ebbd2c7
         - 777c1d51-3012-4805-b84d-08367ebbd2c7
         - 777c1d51-3012-4805-b84d-08367ebbd2c7
         - 777c1d51-3012-4805-b84d-08367ebbd2c7
@@ -225,6 +238,11 @@ Metadata:
         - 195d26f1-c3f9-4f39-88e9-4a2a90f263f8
         - 195d26f1-c3f9-4f39-88e9-4a2a90f263f8
         - 195d26f1-c3f9-4f39-88e9-4a2a90f263f8
+        - 195d26f1-c3f9-4f39-88e9-4a2a90f263f8
+        - 195d26f1-c3f9-4f39-88e9-4a2a90f263f8
+        - 195d26f1-c3f9-4f39-88e9-4a2a90f263f8
+        - 195d26f1-c3f9-4f39-88e9-4a2a90f263f8
+        - 195d26f1-c3f9-4f39-88e9-4a2a90f263f8
       dependson:
         - 1935b7b6-319e-439b-9b10-767a8a3154a8
         - 7ac31814-85f5-45a4-aed0-722a48e9bd38
@@ -250,6 +268,11 @@ Metadata:
       parent: c4b55c2c-b855-45b9-8dd8-e4b838754641
       embeds: []
       iscontainedinside:
+        - c4b55c2c-b855-45b9-8dd8-e4b838754641
+        - c4b55c2c-b855-45b9-8dd8-e4b838754641
+        - c4b55c2c-b855-45b9-8dd8-e4b838754641
+        - c4b55c2c-b855-45b9-8dd8-e4b838754641
+        - c4b55c2c-b855-45b9-8dd8-e4b838754641
         - c4b55c2c-b855-45b9-8dd8-e4b838754641
         - c4b55c2c-b855-45b9-8dd8-e4b838754641
         - c4b55c2c-b855-45b9-8dd8-e4b838754641
@@ -292,6 +315,41 @@ Metadata:
         - 3159d68f-4c98-4c2b-8950-8988378cb3e4
         - 3159d68f-4c98-4c2b-8950-8988378cb3e4
         - 3159d68f-4c98-4c2b-8950-8988378cb3e4
+        - 3159d68f-4c98-4c2b-8950-8988378cb3e4
+        - 3159d68f-4c98-4c2b-8950-8988378cb3e4
+        - 3159d68f-4c98-4c2b-8950-8988378cb3e4
+        - 3159d68f-4c98-4c2b-8950-8988378cb3e4
+        - 3159d68f-4c98-4c2b-8950-8988378cb3e4
+    2aa1b7a8-f865-4a80-8e09-2954bf505475:
+      size:
+        width: 200
+        height: 190
+      position:
+        x: 800
+        'y': 610
+      z: 2
+      parent: 777c1d51-3012-4805-b84d-08367ebbd2c7
+      embeds: []
+    c7174ea7-8697-42fc-a641-0fc8f18c52c8:
+      size:
+        width: 200
+        height: 180
+      position:
+        x: 810
+        'y': 1120
+      z: 2
+      parent: 777c1d51-3012-4805-b84d-08367ebbd2c7
+      embeds: []
+    4b34954a-8b6d-4c91-abc8-e0bdcfaaa28a:
+      size:
+        width: 180
+        height: 200
+      position:
+        x: 810
+        'y': 860
+      z: 2
+      parent: 777c1d51-3012-4805-b84d-08367ebbd2c7
+      embeds: []
 Resources:
   VPC:
     Type: 'AWS::EC2::VPC'
@@ -601,6 +659,30 @@ Resources:
               httpd:
                 enabled: 'true'
                 ensureRunning: 'true'
+  PrivateSubnet1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.1.4.0/24
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 2aa1b7a8-f865-4a80-8e09-2954bf505475
+  PrivateSubnet3:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.1.5.0/24
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: c7174ea7-8697-42fc-a641-0fc8f18c52c8
+  PrivateSubnet2:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.1.6.0/24
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 4b34954a-8b6d-4c91-abc8-e0bdcfaaa28a
 Parameters:
   InstanceType:
     Description: WebServer EC2 instance type
