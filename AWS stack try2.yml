@@ -1,0 +1,77 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    777c1d51-3012-4805-b84d-08367ebbd2c7:
+      size:
+        width: 890
+        height: 300
+      position:
+        x: -3
+        'y': 631
+      z: 0
+      embeds:
+        - 3cd0dd39-c481-4ec2-88d6-92ba196e858b
+        - ce1e3ad5-89e8-4b75-8bfe-0ce7ed7672dc
+    3cd0dd39-c481-4ec2-88d6-92ba196e858b:
+      size:
+        width: 210
+        height: 190
+      position:
+        x: 67
+        'y': 701
+      z: 1
+      parent: 777c1d51-3012-4805-b84d-08367ebbd2c7
+      embeds:
+        - 6fa74a25-7bb9-4404-b6d6-34fbfcb08a9c
+    6fa74a25-7bb9-4404-b6d6-34fbfcb08a9c:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 90
+        'y': 740
+      z: 2
+      parent: 3cd0dd39-c481-4ec2-88d6-92ba196e858b
+      embeds: []
+      iscontainedinside:
+        - 3cd0dd39-c481-4ec2-88d6-92ba196e858b
+        - 3cd0dd39-c481-4ec2-88d6-92ba196e858b
+    ce1e3ad5-89e8-4b75-8bfe-0ce7ed7672dc:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 290.4889221191406
+        'y': 650.2954711914062
+      z: 1
+      parent: 777c1d51-3012-4805-b84d-08367ebbd2c7
+      iscontainedinside:
+        - 777c1d51-3012-4805-b84d-08367ebbd2c7
+Resources:
+  VPC:
+    Type: 'AWS::EC2::VPC'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 777c1d51-3012-4805-b84d-08367ebbd2c7
+  PublicSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 3cd0dd39-c481-4ec2-88d6-92ba196e858b
+  WebServer:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      NetworkInterfaces:
+        - SubnetId: !Ref PublicSubnet
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 6fa74a25-7bb9-4404-b6d6-34fbfcb08a9c
+  WebServerSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref VPC
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: ce1e3ad5-89e8-4b75-8bfe-0ce7ed7672dc
