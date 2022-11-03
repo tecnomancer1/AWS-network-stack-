@@ -154,6 +154,10 @@ Metadata:
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
       dependson:
         - 1f98040d-45ca-4703-9a6f-ad27365f092e
     7175e9ff-d7e8-4e27-88d5-7d7fdb45a267:
@@ -169,6 +173,10 @@ Metadata:
       isassociatedwith:
         - ddb9de6a-2c82-43e8-ada5-952a3d976548
       iscontainedinside:
+        - 8d838283-135a-4538-b69d-ace7c475514f
+        - 8d838283-135a-4538-b69d-ace7c475514f
+        - 8d838283-135a-4538-b69d-ace7c475514f
+        - 8d838283-135a-4538-b69d-ace7c475514f
         - 8d838283-135a-4538-b69d-ace7c475514f
         - 8d838283-135a-4538-b69d-ace7c475514f
         - 8d838283-135a-4538-b69d-ace7c475514f
@@ -287,6 +295,10 @@ Metadata:
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
       dependson:
         - 1f98040d-45ca-4703-9a6f-ad27365f092e
     ddb9de6a-2c82-43e8-ada5-952a3d976548:
@@ -351,6 +363,10 @@ Metadata:
         - edef8a41-9c1d-46eb-a29f-a72f78c8446a
         - edef8a41-9c1d-46eb-a29f-a72f78c8446a
         - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
     bddcbbc4-e9e0-4331-8e72-1dc59078f70a:
       size:
         width: 60
@@ -362,6 +378,10 @@ Metadata:
       parent: edef8a41-9c1d-46eb-a29f-a72f78c8446a
       embeds: []
       iscontainedinside:
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
+        - edef8a41-9c1d-46eb-a29f-a72f78c8446a
         - edef8a41-9c1d-46eb-a29f-a72f78c8446a
         - edef8a41-9c1d-46eb-a29f-a72f78c8446a
         - edef8a41-9c1d-46eb-a29f-a72f78c8446a
@@ -499,6 +519,10 @@ Metadata:
         - 88232fe9-5945-4770-afc6-0b8ec5550b41
         - 88232fe9-5945-4770-afc6-0b8ec5550b41
         - 88232fe9-5945-4770-afc6-0b8ec5550b41
+        - 88232fe9-5945-4770-afc6-0b8ec5550b41
+        - 88232fe9-5945-4770-afc6-0b8ec5550b41
+        - 88232fe9-5945-4770-afc6-0b8ec5550b41
+        - 88232fe9-5945-4770-afc6-0b8ec5550b41
       dependson:
         - f83697cd-122c-4f9b-9248-b6d3aef6d000
     4e4255f7-ce2c-4954-8a63-298b18122f15:
@@ -527,6 +551,10 @@ Metadata:
       parent: 4e4255f7-ce2c-4954-8a63-298b18122f15
       embeds: []
       iscontainedinside:
+        - 4e4255f7-ce2c-4954-8a63-298b18122f15
+        - 4e4255f7-ce2c-4954-8a63-298b18122f15
+        - 4e4255f7-ce2c-4954-8a63-298b18122f15
+        - 4e4255f7-ce2c-4954-8a63-298b18122f15
         - 4e4255f7-ce2c-4954-8a63-298b18122f15
         - 4e4255f7-ce2c-4954-8a63-298b18122f15
         - 4e4255f7-ce2c-4954-8a63-298b18122f15
@@ -600,6 +628,10 @@ Metadata:
         - 3c74a295-8a01-4b6f-9085-3791cb237828
         - c6c40432-a863-4b5f-a4d8-47dda49c861c
         - 3c74a295-8a01-4b6f-9085-3791cb237828
+        - 3c74a295-8a01-4b6f-9085-3791cb237828
+        - 3c74a295-8a01-4b6f-9085-3791cb237828
+        - 3c74a295-8a01-4b6f-9085-3791cb237828
+        - 3c74a295-8a01-4b6f-9085-3791cb237828
       dependson:
         - a6ed308e-77cd-4b76-8d28-7e5d4f09694a
         - bddcbbc4-e9e0-4331-8e72-1dc59078f70a
@@ -614,6 +646,10 @@ Metadata:
       parent: 07334a8b-ada4-4dd4-9446-03492f68ccc4
       embeds: []
       iscontainedinside:
+        - 07334a8b-ada4-4dd4-9446-03492f68ccc4
+        - 07334a8b-ada4-4dd4-9446-03492f68ccc4
+        - 07334a8b-ada4-4dd4-9446-03492f68ccc4
+        - 07334a8b-ada4-4dd4-9446-03492f68ccc4
         - 07334a8b-ada4-4dd4-9446-03492f68ccc4
         - 07334a8b-ada4-4dd4-9446-03492f68ccc4
         - 07334a8b-ada4-4dd4-9446-03492f68ccc4
@@ -704,6 +740,10 @@ Metadata:
         - c6c40432-a863-4b5f-a4d8-47dda49c861c
         - c6c40432-a863-4b5f-a4d8-47dda49c861c
         - c6c40432-a863-4b5f-a4d8-47dda49c861c
+        - c6c40432-a863-4b5f-a4d8-47dda49c861c
+        - c6c40432-a863-4b5f-a4d8-47dda49c861c
+        - c6c40432-a863-4b5f-a4d8-47dda49c861c
+        - c6c40432-a863-4b5f-a4d8-47dda49c861c
       dependson:
         - a6ed308e-77cd-4b76-8d28-7e5d4f09694a
         - bddcbbc4-e9e0-4331-8e72-1dc59078f70a
@@ -727,6 +767,10 @@ Metadata:
       parent: 358d871b-95d8-4e65-a91d-72e3ac445d68
       embeds: []
       iscontainedinside:
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
+        - 358d871b-95d8-4e65-a91d-72e3ac445d68
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
         - 358d871b-95d8-4e65-a91d-72e3ac445d68
@@ -795,6 +839,10 @@ Metadata:
         - 8d838283-135a-4538-b69d-ace7c475514f
         - 8d838283-135a-4538-b69d-ace7c475514f
         - 8d838283-135a-4538-b69d-ace7c475514f
+        - 8d838283-135a-4538-b69d-ace7c475514f
+        - 8d838283-135a-4538-b69d-ace7c475514f
+        - 8d838283-135a-4538-b69d-ace7c475514f
+        - 8d838283-135a-4538-b69d-ace7c475514f
     f2b42aea-e012-4e21-b49b-1819794cda70:
       size:
         width: 60
@@ -806,6 +854,10 @@ Metadata:
       parent: 0809b2eb-369c-41f0-bf53-bce737b7e7ae
       embeds: []
       iscontainedinside:
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
+        - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
         - 0809b2eb-369c-41f0-bf53-bce737b7e7ae
@@ -870,6 +922,10 @@ Metadata:
         - c6c40432-a863-4b5f-a4d8-47dda49c861c
         - c6c40432-a863-4b5f-a4d8-47dda49c861c
         - c6c40432-a863-4b5f-a4d8-47dda49c861c
+        - c6c40432-a863-4b5f-a4d8-47dda49c861c
+        - c6c40432-a863-4b5f-a4d8-47dda49c861c
+        - c6c40432-a863-4b5f-a4d8-47dda49c861c
+        - c6c40432-a863-4b5f-a4d8-47dda49c861c
     c9d447df-3b1c-4e5a-a8d3-c414f5dc2b49:
       size:
         width: 60
@@ -906,6 +962,10 @@ Metadata:
         - 07334a8b-ada4-4dd4-9446-03492f68ccc4
         - 07334a8b-ada4-4dd4-9446-03492f68ccc4
         - 07334a8b-ada4-4dd4-9446-03492f68ccc4
+        - 07334a8b-ada4-4dd4-9446-03492f68ccc4
+        - 07334a8b-ada4-4dd4-9446-03492f68ccc4
+        - 07334a8b-ada4-4dd4-9446-03492f68ccc4
+        - 07334a8b-ada4-4dd4-9446-03492f68ccc4
     1ee9846b-0ed7-445a-b693-206cff631b4d:
       size:
         width: 60
@@ -917,6 +977,10 @@ Metadata:
       parent: 3c74a295-8a01-4b6f-9085-3791cb237828
       embeds: []
       iscontainedinside:
+        - 3c74a295-8a01-4b6f-9085-3791cb237828
+        - 3c74a295-8a01-4b6f-9085-3791cb237828
+        - 3c74a295-8a01-4b6f-9085-3791cb237828
+        - 3c74a295-8a01-4b6f-9085-3791cb237828
         - 3c74a295-8a01-4b6f-9085-3791cb237828
         - 3c74a295-8a01-4b6f-9085-3791cb237828
         - 3c74a295-8a01-4b6f-9085-3791cb237828
@@ -1052,6 +1116,30 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: a39ba498-9fa2-43a6-acce-96b0a1d8c1ef
+        'AWS::CloudFormation::Init': null
+        configSets:
+          All:
+            - ConfigureSampleApp
+        ConfigureSampleApp:
+          packages:
+            yum:
+              httpd: []
+          files:
+            /var/www/html/index.html:
+              content: !Join 
+                - |+
+
+                - - >-
+                    <h1>Congratulations, you have successfully launched the AWS
+                    CloudFormation sample.</h1>
+              mode: '000644'
+              owner: root
+              group: root
+          services:
+            sysvinit:
+              httpd:
+                enabled: 'true'
+                ensureRunning: 'true'
     DependsOn:
       - PublicRoute
   MyStackWebServer2:
@@ -1105,6 +1193,30 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 7175e9ff-d7e8-4e27-88d5-7d7fdb45a267
+        'AWS::CloudFormation::Init': null
+        configSets:
+          All:
+            - ConfigureSampleApp
+        ConfigureSampleApp:
+          packages:
+            yum:
+              httpd: []
+          files:
+            /var/www/html/index.html:
+              content: !Join 
+                - |+
+
+                - - >-
+                    <h1>Congratulations, you have successfully launched the AWS
+                    CloudFormation sample.</h1>
+              mode: '000644'
+              owner: root
+              group: root
+          services:
+            sysvinit:
+              httpd:
+                enabled: 'true'
+                ensureRunning: 'true'
     DependsOn:
       - PublicRoute
   MyStackWebServer3:
@@ -1158,6 +1270,30 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: dfe2e52d-3954-472c-ab08-fc189412c06f
+        'AWS::CloudFormation::Init': null
+        configSets:
+          All:
+            - ConfigureSampleApp
+        ConfigureSampleApp:
+          packages:
+            yum:
+              httpd: []
+          files:
+            /var/www/html/index.html:
+              content: !Join 
+                - |+
+
+                - - >-
+                    <h1>Congratulations, you have successfully launched the AWS
+                    CloudFormation sample.</h1>
+              mode: '000644'
+              owner: root
+              group: root
+          services:
+            sysvinit:
+              httpd:
+                enabled: 'true'
+                ensureRunning: 'true'
     DependsOn:
       - PublicRoute
   MyStackPublicSG:
