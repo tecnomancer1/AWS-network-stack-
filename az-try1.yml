@@ -20,10 +20,11 @@ Metadata:
         width: 140
         height: 140
       position:
-        x: 108.8342170715332
-        'y': 787.9071655273438
+        x: 110
+        'y': 790
       z: 0
-      embeds: []
+      embeds:
+        - 6cee71e0-b85a-469b-9756-0f482e058e18
     f0d08746-bc94-433c-8397-d486668fe209:
       size:
         width: 140
@@ -32,7 +33,8 @@ Metadata:
         x: 110
         'y': 990
       z: 0
-      embeds: []
+      embeds:
+        - 62923c3b-a163-46d6-92fb-7b631634f267
     18406e50-b309-42c9-92d6-085059a99d8b:
       size:
         width: 140
@@ -41,7 +43,8 @@ Metadata:
         x: 110
         'y': 1200
       z: 0
-      embeds: []
+      embeds:
+        - cfbbb0d5-134e-4801-82e3-bab9f6309027
     e03bb05d-a75e-4521-99f9-fa99365ba3fb:
       size:
         width: 140
@@ -131,6 +134,13 @@ Metadata:
       parent: 650a8dd1-457e-4bab-ae37-21f852e54d89
       embeds: []
       iscontainedinside:
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
@@ -275,6 +285,13 @@ Metadata:
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
     bb411d11-297c-4369-9aed-c16014908b1e:
       size:
         width: 60
@@ -288,6 +305,13 @@ Metadata:
       isassociatedwith:
         - 8a0c697b-facb-4f74-bc51-4dbc0b05a79b
       iscontainedinside:
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
@@ -319,6 +343,56 @@ Metadata:
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+    6cee71e0-b85a-469b-9756-0f482e058e18:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 130
+        'y': 830
+      z: 1
+      parent: b19a9821-d4f9-48bb-9a14-6108d767f67c
+      embeds: []
+      iscontainedinside:
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+    62923c3b-a163-46d6-92fb-7b631634f267:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 136.29864839527127
+        'y': 1025.40737389723
+      z: 1
+      parent: f0d08746-bc94-433c-8397-d486668fe209
+      embeds: []
+      iscontainedinside:
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+    cfbbb0d5-134e-4801-82e3-bab9f6309027:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 140
+        'y': 1240
+      z: 1
+      parent: 18406e50-b309-42c9-92d6-085059a99d8b
+      embeds: []
+      iscontainedinside:
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
 Parameters:
   VpcCIDR:
     Type: String
@@ -627,6 +701,71 @@ Resources:
     Properties:
       RouteTableId: !Ref PrivateRT3
       SubnetId: !Ref PrivateSubnet3
+  WebServer1:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      NetworkInterfaces:
+        - SubnetId: !Ref PublicSubnet1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 6cee71e0-b85a-469b-9756-0f482e058e18
+  WebServer2:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      KeyName: !Ref KeyName
+      NetworkInterfaces:
+        - GroupSet:
+            - !Ref PublicServersSG
+          AssociatePublicIpAddress: 'true'
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref PublicSubnet2
+      UserData: !Base64 
+        'Fn::Join':
+          - ''
+          - - |
+              #!/bin/bash -xe
+            - |
+              yum install -y aws-cfn-bootstrap
+            - |
+              # Install the files and packages from the metadata
+            - '/opt/aws/bin/cfn-init -v '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer2 '
+            - '         --configsets All '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - |+
+
+            - |
+              # Signal the status from cfn-init
+            - '/opt/aws/bin/cfn-signal -e $? '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer2 '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - ''
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 62923c3b-a163-46d6-92fb-7b631634f267
+  WebServer3:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      NetworkInterfaces:
+        - SubnetId: !Ref PublicSubnet3
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: cfbbb0d5-134e-4801-82e3-bab9f6309027
 Outputs:
   VPC:
     Description: A reference to the MyStack VPC
@@ -669,3 +808,40 @@ Outputs:
   PrivateServersSG:
     Description: Security group for private servers
     Value: !Ref PrivateServersSG
+  URL:
+    Value: !Join 
+      - ''
+      - - 'http://'
+        - !GetAtt 
+          - WebServer1
+          - PublicIp
+        - !GetAtt 
+          - WebServer2
+          - PublicIp
+        - !GetAtt 
+          - WebServer3
+          - PublicIp
+    Description: Newly created application URL
+Mappings:
+  AWSInstanceType2Arch:
+    t1.micro:
+      Arch: HVM64
+    t2.nano:
+      Arch: HVM64
+    t2.micro:
+      Arch: HVM64
+    t2.small:
+      Arch: HVM64
+  AWSRegionArch2AMI:
+    eu-west-1:
+      HVM64: ami-047bb4163c506cd98
+      HVMG2: ami-0a7c483d527806435
+    eu-west-2:
+      HVM64: ami-f976839e
+      HVMG2: NOT_SUPPORTED
+    eu-west-3:
+      HVM64: ami-0ebc281c20e89ba4b
+      HVMG2: NOT_SUPPORTED
+    eu-central-1:
+      HVM64: ami-0233214e13e500f77
+      HVMG2: ami-06223d46a6d0661c7
