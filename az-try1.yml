@@ -104,6 +104,33 @@ Metadata:
         'y': 1230
       z: 0
       embeds: []
+      iscontainedinside:
+        - 946de7bf-f7a2-4e07-a04c-84d2e032a501
+    650a8dd1-457e-4bab-ae37-21f852e54d89:
+      size:
+        width: 140
+        height: 140
+      position:
+        x: 110
+        'y': 600
+      z: 0
+      embeds:
+        - 0d05cf03-b481-4ae8-bd98-d8f012c2af9a
+      dependson:
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+    0d05cf03-b481-4ae8-bd98-d8f012c2af9a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 133.39399514163983
+        'y': 627.4729141487144
+      z: 1
+      parent: 650a8dd1-457e-4bab-ae37-21f852e54d89
+      iscontainedinside:
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
 Parameters:
   VpcCIDR:
     Type: String
@@ -278,3 +305,26 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 6cf20b0c-6e02-435c-98c3-a7c90afdc758
+  PublicRT:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref VPC
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 650a8dd1-457e-4bab-ae37-21f852e54d89
+    DependsOn:
+      - PublicSubnet1
+      - PublicSubnet2
+      - PublicSubnet3
+  PublicRoute:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref PublicRT
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 0d05cf03-b481-4ae8-bd98-d8f012c2af9a
+    DependsOn:
+      - VPC2IG
+      - InternetGateway
