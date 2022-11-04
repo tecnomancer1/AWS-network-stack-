@@ -157,6 +157,9 @@ Metadata:
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
       dependson:
         - 6813de72-7558-4d78-a661-f733c162db08
         - 8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c
@@ -269,6 +272,9 @@ Metadata:
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
     bb411d11-297c-4369-9aed-c16014908b1e:
       size:
         width: 60
@@ -288,6 +294,9 @@ Metadata:
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
     9c703a8f-6092-44c7-aa03-78caa48417d8:
       size:
         width: 60
@@ -301,6 +310,9 @@ Metadata:
       isassociatedwith:
         - bb51f609-97d7-4266-af69-bb463a92cfbd
       iscontainedinside:
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
@@ -582,6 +594,11 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: b717ca3b-9ef6-4ade-8953-f5891f2e5c6c
+  PrivateSubnet1RTAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      RouteTableId: !Ref PrivateRT1
+      SubnetId: !Ref PrivateSubnet1
   PrivateRoute2:
     Type: 'AWS::EC2::Route'
     Properties:
@@ -591,6 +608,11 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: bb411d11-297c-4369-9aed-c16014908b1e
+  PrivateSubnet2RTAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      RouteTableId: !Ref PrivateRT2
+      SubnetId: !Ref PrivateSubnet2
   PrivateRoute3:
     Type: 'AWS::EC2::Route'
     Properties:
@@ -600,3 +622,50 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 9c703a8f-6092-44c7-aa03-78caa48417d8
+  PrivateSubnet3RTAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      RouteTableId: !Ref PrivateRT3
+      SubnetId: !Ref PrivateSubnet3
+Outputs:
+  VPC:
+    Description: A reference to the MyStack VPC
+    Value: !Ref VPC
+  PublicSubnets:
+    Description: A list of the public subnets
+    Value: !Join 
+      - ','
+      - - !Ref PublicSubnet1
+        - !Ref PublicSubnet2
+        - !Ref PublicSubnet3
+  PrivateSubnets:
+    Description: A list of the private subnets
+    Value: !Join 
+      - ','
+      - - !Ref PrivateSubnet1
+        - !Ref PrivateSubnet2
+        - !Ref PrivateSubnet2
+  PublicSubnet1:
+    Description: A reference to the public subnet in the 1st Availability Zone
+    Value: !Ref PublicSubnet1
+  PublicSubnet2:
+    Description: A reference to the public subnet in the 2nd Availability Zone
+    Value: !Ref PublicSubnet2
+  PublicSubnet3:
+    Description: A reference to the public subnet in the 2nd Availability Zone
+    Value: !Ref PublicSubnet3
+  PrivateSubnet1:
+    Description: A reference to the private subnet in the 1st Availability Zone
+    Value: !Ref PrivateSubnet1
+  PrivateSubnet2:
+    Description: A reference to the private subnet in the 2nd Availability Zone
+    Value: !Ref PrivateSubnet2
+  PrivateSubnet3:
+    Description: A reference to the private subnet in the 2nd Availability Zone
+    Value: !Ref PrivateSubnet3
+  PublicServersSG:
+    Description: Security group for public servers
+    Value: !Ref PublicServersSG
+  PrivateServersSG:
+    Description: Security group for private servers
+    Value: !Ref PrivateServersSG
