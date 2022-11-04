@@ -170,6 +170,8 @@ Metadata:
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
       dependson:
         - 6813de72-7558-4d78-a661-f733c162db08
         - 8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c
@@ -292,6 +294,8 @@ Metadata:
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
     bb411d11-297c-4369-9aed-c16014908b1e:
       size:
         width: 60
@@ -305,6 +309,8 @@ Metadata:
       isassociatedwith:
         - 8a0c697b-facb-4f74-bc51-4dbc0b05a79b
       iscontainedinside:
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
@@ -350,6 +356,8 @@ Metadata:
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
     6cee71e0-b85a-469b-9756-0f482e058e18:
       size:
         width: 60
@@ -361,6 +369,8 @@ Metadata:
       parent: b19a9821-d4f9-48bb-9a14-6108d767f67c
       embeds: []
       iscontainedinside:
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
@@ -379,6 +389,8 @@ Metadata:
         - f0d08746-bc94-433c-8397-d486668fe209
         - f0d08746-bc94-433c-8397-d486668fe209
         - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
     cfbbb0d5-134e-4801-82e3-bab9f6309027:
       size:
         width: 60
@@ -390,6 +402,8 @@ Metadata:
       parent: 18406e50-b309-42c9-92d6-085059a99d8b
       embeds: []
       iscontainedinside:
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
         - 18406e50-b309-42c9-92d6-085059a99d8b
         - 18406e50-b309-42c9-92d6-085059a99d8b
         - 18406e50-b309-42c9-92d6-085059a99d8b
@@ -704,8 +718,49 @@ Resources:
   WebServer1:
     Type: 'AWS::EC2::Instance'
     Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      KeyName: !Ref KeyName
       NetworkInterfaces:
-        - SubnetId: !Ref PublicSubnet1
+        - GroupSet:
+            - !Ref PublicServersSG
+          AssociatePublicIpAddress: 'true'
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref PublicSubnet1
+      UserData: !Base64 
+        'Fn::Join':
+          - ''
+          - - |
+              #!/bin/bash -xe
+            - |
+              yum install -y aws-cfn-bootstrap
+            - |
+              # Install the files and packages from the metadata
+            - '/opt/aws/bin/cfn-init -v '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer1 '
+            - '         --configsets All '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - |+
+
+            - |
+              # Signal the status from cfn-init
+            - '/opt/aws/bin/cfn-signal -e $? '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer1 '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - ''
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 6cee71e0-b85a-469b-9756-0f482e058e18
@@ -761,8 +816,49 @@ Resources:
   WebServer3:
     Type: 'AWS::EC2::Instance'
     Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      KeyName: !Ref KeyName
       NetworkInterfaces:
-        - SubnetId: !Ref PublicSubnet3
+        - GroupSet:
+            - !Ref PublicServersSG
+          AssociatePublicIpAddress: 'true'
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref PublicSubnet3
+      UserData: !Base64 
+        'Fn::Join':
+          - ''
+          - - |
+              #!/bin/bash -xe
+            - |
+              yum install -y aws-cfn-bootstrap
+            - |
+              # Install the files and packages from the metadata
+            - '/opt/aws/bin/cfn-init -v '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer3 '
+            - '         --configsets All '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - |+
+
+            - |
+              # Signal the status from cfn-init
+            - '/opt/aws/bin/cfn-signal -e $? '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer3 '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - ''
     Metadata:
       'AWS::CloudFormation::Designer':
         id: cfbbb0d5-134e-4801-82e3-bab9f6309027
