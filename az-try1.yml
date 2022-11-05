@@ -8,78 +8,78 @@ Metadata:
   'AWS::CloudFormation::Designer':
     946de7bf-f7a2-4e07-a04c-84d2e032a501:
       size:
-        width: 140
-        height: 140
+        width: 150
+        height: 150
       position:
-        x: 339.8342170715332
-        'y': 864.9071655273438
-      z: 0
+        x: 330
+        'y': 870
+      z: 1
       embeds: []
     b19a9821-d4f9-48bb-9a14-6108d767f67c:
       size:
-        width: 140
-        height: 140
+        width: 150
+        height: 180
       position:
-        x: 110
-        'y': 790
-      z: 0
+        x: 130
+        'y': 780
+      z: 1
       embeds:
         - 6cee71e0-b85a-469b-9756-0f482e058e18
     f0d08746-bc94-433c-8397-d486668fe209:
       size:
-        width: 140
-        height: 140
+        width: 150
+        height: 150
       position:
-        x: 110
-        'y': 990
-      z: 0
+        x: 130
+        'y': 1010
+      z: 1
       embeds:
         - 62923c3b-a163-46d6-92fb-7b631634f267
     18406e50-b309-42c9-92d6-085059a99d8b:
       size:
-        width: 140
-        height: 140
+        width: 150
+        height: 150
       position:
-        x: 110
+        x: 120
         'y': 1200
-      z: 0
+      z: 1
       embeds:
         - cfbbb0d5-134e-4801-82e3-bab9f6309027
     e03bb05d-a75e-4521-99f9-fa99365ba3fb:
       size:
-        width: 140
-        height: 140
+        width: 150
+        height: 150
       position:
-        x: 574.8342170715332
-        'y': 787.9071655273438
-      z: 0
+        x: 570
+        'y': 780
+      z: 1
       embeds: []
     74698232-af41-4e46-9917-dd257941c359:
       size:
-        width: 140
-        height: 140
+        width: 150
+        height: 150
       position:
-        x: 580
-        'y': 1000
-      z: 0
+        x: 570
+        'y': 990
+      z: 1
       embeds: []
     37e78f58-caa6-49b7-abbd-71b19d948e4d:
       size:
-        width: 140
-        height: 140
+        width: 150
+        height: 150
       position:
-        x: 580
-        'y': 1210
-      z: 0
+        x: 570
+        'y': 1200
+      z: 1
       embeds: []
     8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c:
       size:
         width: 60
         height: 60
       position:
-        x: 325.7413921243026
-        'y': 750.9198300563459
-      z: 0
+        x: 330
+        'y': 750
+      z: 1
       embeds: []
     6813de72-7558-4d78-a661-f733c162db08:
       source:
@@ -92,9 +92,9 @@ Metadata:
         width: 60
         height: 60
       position:
-        x: 340
-        'y': 1060
-      z: 0
+        x: 330
+        'y': 1050
+      z: 1
       embeds: []
       iscontainedinside:
         - 946de7bf-f7a2-4e07-a04c-84d2e032a501
@@ -103,20 +103,20 @@ Metadata:
         width: 60
         height: 60
       position:
-        x: 290
-        'y': 1180
-      z: 0
+        x: 300
+        'y': 1170
+      z: 1
       embeds: []
       iscontainedinside:
         - 946de7bf-f7a2-4e07-a04c-84d2e032a501
     650a8dd1-457e-4bab-ae37-21f852e54d89:
       size:
-        width: 140
-        height: 140
+        width: 150
+        height: 150
       position:
-        x: 110
+        x: 120
         'y': 600
-      z: 0
+      z: 1
       embeds:
         - 0d05cf03-b481-4ae8-bd98-d8f012c2af9a
       dependson:
@@ -128,12 +128,16 @@ Metadata:
         width: 60
         height: 60
       position:
-        x: 133.39399514163983
-        'y': 627.4729141487144
-      z: 1
+        x: 120
+        'y': 630
+      z: 2
       parent: 650a8dd1-457e-4bab-ae37-21f852e54d89
       embeds: []
       iscontainedinside:
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
@@ -180,32 +184,32 @@ Metadata:
         - 8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c
     25c2e808-d283-46a0-a54e-471c8e15bbdb:
       size:
-        width: 140
-        height: 140
+        width: 150
+        height: 150
       position:
         x: 780
         'y': 780
-      z: 0
+      z: 1
       embeds:
         - b717ca3b-9ef6-4ade-8953-f5891f2e5c6c
     595557a5-242d-46a2-8486-31967b3f5603:
       size:
-        width: 140
-        height: 140
+        width: 150
+        height: 150
       position:
         x: 780
         'y': 990
-      z: 0
+      z: 1
       embeds:
         - bb411d11-297c-4369-9aed-c16014908b1e
     fdb290f0-2e88-4281-99e7-edfcae7de440:
       size:
-        width: 140
-        height: 140
+        width: 150
+        height: 150
       position:
         x: 780
-        'y': 1210
-      z: 0
+        'y': 1200
+      z: 1
       embeds:
         - 9c703a8f-6092-44c7-aa03-78caa48417d8
     8cb7e1be-6021-425f-b27c-28732e02c830:
@@ -213,18 +217,18 @@ Metadata:
         width: 60
         height: 60
       position:
-        x: 280
-        'y': 1270
-      z: 0
+        x: 270
+        'y': 1260
+      z: 1
       embeds: []
     8a0c697b-facb-4f74-bc51-4dbc0b05a79b:
       size:
         width: 60
         height: 60
       position:
-        x: 380
-        'y': 1270
-      z: 0
+        x: 390
+        'y': 1260
+      z: 1
       embeds: []
     bb51f609-97d7-4266-af69-bb463a92cfbd:
       size:
@@ -232,17 +236,17 @@ Metadata:
         height: 60
       position:
         x: 480
-        'y': 1270
-      z: 0
+        'y': 1260
+      z: 1
       embeds: []
     943b1d62-7a26-4a4c-b531-5d85392a99de:
       size:
         width: 60
         height: 60
       position:
-        x: 280
-        'y': 1360
-      z: 0
+        x: 270
+        'y': 1350
+      z: 1
       embeds: []
       dependson:
         - 6813de72-7558-4d78-a661-f733c162db08
@@ -251,9 +255,9 @@ Metadata:
         width: 60
         height: 60
       position:
-        x: 380
-        'y': 1360
-      z: 0
+        x: 390
+        'y': 1350
+      z: 1
       embeds: []
       dependson:
         - 6813de72-7558-4d78-a661-f733c162db08
@@ -263,8 +267,8 @@ Metadata:
         height: 60
       position:
         x: 480
-        'y': 1360
-      z: 0
+        'y': 1350
+      z: 1
       embeds: []
       dependson:
         - 6813de72-7558-4d78-a661-f733c162db08
@@ -273,9 +277,9 @@ Metadata:
         width: 60
         height: 60
       position:
-        x: 800
-        'y': 800
-      z: 1
+        x: 810
+        'y': 810
+      z: 2
       parent: 25c2e808-d283-46a0-a54e-471c8e15bbdb
       embeds: []
       isassociatedwith:
@@ -302,14 +306,18 @@ Metadata:
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
     bb411d11-297c-4369-9aed-c16014908b1e:
       size:
         width: 60
         height: 60
       position:
-        x: 800
-        'y': 1010
-      z: 1
+        x: 810
+        'y': 1020
+      z: 2
       parent: 595557a5-242d-46a2-8486-31967b3f5603
       embeds: []
       isassociatedwith:
@@ -336,14 +344,18 @@ Metadata:
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
     9c703a8f-6092-44c7-aa03-78caa48417d8:
       size:
         width: 60
         height: 60
       position:
-        x: 800
+        x: 810
         'y': 1230
-      z: 1
+      z: 2
       parent: fdb290f0-2e88-4281-99e7-edfcae7de440
       embeds: []
       isassociatedwith:
@@ -370,17 +382,25 @@ Metadata:
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
     6cee71e0-b85a-469b-9756-0f482e058e18:
       size:
         width: 60
         height: 60
       position:
-        x: 130
-        'y': 830
-      z: 1
+        x: 180
+        'y': 810
+      z: 2
       parent: b19a9821-d4f9-48bb-9a14-6108d767f67c
       embeds: []
       iscontainedinside:
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
@@ -395,12 +415,16 @@ Metadata:
         width: 60
         height: 60
       position:
-        x: 136.29864839527127
-        'y': 1025.40737389723
-      z: 1
+        x: 190
+        'y': 1070
+      z: 2
       parent: f0d08746-bc94-433c-8397-d486668fe209
       embeds: []
       iscontainedinside:
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
         - f0d08746-bc94-433c-8397-d486668fe209
         - f0d08746-bc94-433c-8397-d486668fe209
         - f0d08746-bc94-433c-8397-d486668fe209
@@ -414,9 +438,9 @@ Metadata:
         width: 60
         height: 60
       position:
-        x: 140
-        'y': 1240
-      z: 1
+        x: 180
+        'y': 1260
+      z: 2
       parent: 18406e50-b309-42c9-92d6-085059a99d8b
       embeds: []
       iscontainedinside:
@@ -428,6 +452,43 @@ Metadata:
         - 18406e50-b309-42c9-92d6-085059a99d8b
         - 18406e50-b309-42c9-92d6-085059a99d8b
         - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+    6769ba58-6b00-491b-8b1a-c038d08bf603:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 480
+        'y': 1080
+      z: 1
+      embeds: []
+      iscontainedinside:
+        - 946de7bf-f7a2-4e07-a04c-84d2e032a501
+    325c016d-a75f-4255-b312-cfdbae6e7173:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 60
+        'y': 840
+      z: 1
+      embeds: []
+      iscontainedinside:
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+    2d01982a-cd1e-4d52-9f9c-8f1fa92ac8ba:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 60
+        'y': 90
+      z: 1
+      embeds: []
 Parameters:
   VpcCIDR:
     Type: String
@@ -472,6 +533,10 @@ Parameters:
     Default: 0.0.0.0/0
     AllowedPattern: '(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})'
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
+  JumpBoxImage:
+    Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    Description: The AMI for the bastion host
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
 Resources:
   VPC:
     Type: 'AWS::EC2::VPC'
@@ -572,16 +637,12 @@ Resources:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
       VpcId: !Ref VPC
-      GroupDescription: Allow access from HTTP and SSH traffic
+      GroupDescription: Allow access from HTTP
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 80
           ToPort: 80
           CidrIp: 0.0.0.0/0
-        - IpProtocol: tcp
-          FromPort: 22
-          ToPort: 22
-          CidrIp: !Ref SSHLocation
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 2ae1f087-f20d-4a0b-8522-cab56f74064e
@@ -955,6 +1016,78 @@ Resources:
               httpd:
                 enabled: 'true'
                 ensureRunning: 'true'
+  JumpBoxSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref VPC
+      GroupDescription: Allow SSH traffic
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref SSHLocation
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 6769ba58-6b00-491b-8b1a-c038d08bf603
+  JumpBoxASG:
+    Type: 'AWS::AutoScaling::AutoScalingGroup'
+    Properties:
+      LaunchTemplate:
+        LaunchTemplateId:
+          Ref: LaunchTemplate
+        Version:
+          'Fn::GetAtt': LaunchTemplate.LatestVersionNumber
+      VPCZoneIdentifier:
+        - 'Fn::ImportValue':
+            'Fn::Sub': PublicSubnet1
+        - 'Fn::ImportValue':
+            'Fn::Sub': PublicSubnet2
+        - 'Fn::ImportValue':
+            'Fn::Sub': PublicSubnet3
+      MinSize: 0
+      MaxSize: 1
+      DesiredCapacity: 1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 325c016d-a75f-4255-b312-cfdbae6e7173
+  LaunchTemplate:
+    Type: 'AWS::EC2::LaunchTemplate'
+    Properties:
+      LaunchTemplateData:
+        InstanceType:
+          Ref: InstanceType
+        ImageId:
+          Ref: JumpBoxImage
+        SecurityGroupIds:
+          - 'Fn::ImportValue':
+              'Fn::Sub': JumpBoxSG
+        KeyName:
+          Ref: KeyName
+        TagSpecifications:
+          - ResourceType: instance
+            Tags:
+              - Key: Name
+                Value: JumpBox
+          - ResourceType: volume
+            Tags:
+              - Key: Name
+                Value: JumpBox
+        InstanceMarketOptions:
+          MarketType: spot
+          SpotOptions:
+            SpotInstanceType: one-time
+            InstanceInterruptionBehavior: terminate
+        UserData:
+          'Fn::Base64':
+            'Fn::Join':
+              - ''
+              - - |
+                  #!/bin/bash
+                - |
+                  yum -y --security update
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 2d01982a-cd1e-4d52-9f9c-8f1fa92ac8ba
 Outputs:
   VPC:
     Description: A reference to the MyStack VPC
