@@ -199,6 +199,10 @@ Metadata:
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
       dependson:
         - 6813de72-7558-4d78-a661-f733c162db08
         - 8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c
@@ -347,6 +351,10 @@ Metadata:
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
     bb411d11-297c-4369-9aed-c16014908b1e:
       size:
         width: 60
@@ -360,6 +368,10 @@ Metadata:
       isassociatedwith:
         - 8a0c697b-facb-4f74-bc51-4dbc0b05a79b
       iscontainedinside:
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
@@ -457,6 +469,10 @@ Metadata:
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
     6cee71e0-b85a-469b-9756-0f482e058e18:
       size:
         width: 60
@@ -468,6 +484,10 @@ Metadata:
       parent: b19a9821-d4f9-48bb-9a14-6108d767f67c
       embeds: []
       iscontainedinside:
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
@@ -538,6 +558,10 @@ Metadata:
         - f0d08746-bc94-433c-8397-d486668fe209
         - f0d08746-bc94-433c-8397-d486668fe209
         - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
     cfbbb0d5-134e-4801-82e3-bab9f6309027:
       size:
         width: 60
@@ -549,6 +573,10 @@ Metadata:
       parent: 18406e50-b309-42c9-92d6-085059a99d8b
       embeds: []
       iscontainedinside:
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
         - 18406e50-b309-42c9-92d6-085059a99d8b
         - 18406e50-b309-42c9-92d6-085059a99d8b
         - 18406e50-b309-42c9-92d6-085059a99d8b
@@ -629,6 +657,10 @@ Metadata:
         - 37e78f58-caa6-49b7-abbd-71b19d948e4d
         - 37e78f58-caa6-49b7-abbd-71b19d948e4d
         - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
     c18cf6c0-ca2f-4d00-b509-0ce66f4586fe:
       size:
         width: 60
@@ -646,6 +678,10 @@ Metadata:
         - 74698232-af41-4e46-9917-dd257941c359
         - 74698232-af41-4e46-9917-dd257941c359
         - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
     c62eb7c7-6fbd-4af9-809b-81eb1aee160e:
       size:
         width: 60
@@ -657,6 +693,10 @@ Metadata:
       parent: e03bb05d-a75e-4521-99f9-fa99365ba3fb
       embeds: []
       iscontainedinside:
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
         - e03bb05d-a75e-4521-99f9-fa99365ba3fb
         - e03bb05d-a75e-4521-99f9-fa99365ba3fb
         - e03bb05d-a75e-4521-99f9-fa99365ba3fb
@@ -718,6 +758,14 @@ Parameters:
     Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
     Description: The AMI for the jump box
     Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+  DbUsername:
+    Description: The datbaase master user name
+    Type: String
+    Default: root
+  DbPassword:
+    Description: The database master password
+    Type: String
+    Default: 'Ck41T@J6%H0aZol#'
 Resources:
   VPC:
     Type: 'AWS::EC2::VPC'
@@ -1305,10 +1353,35 @@ Resources:
       NetworkInterfaces:
         - GroupSet:
             - !Ref PrivateServersSG
-          AssociatePublicIpAddress: 'true'
           DeviceIndex: '0'
           DeleteOnTermination: 'true'
           SubnetId: !Ref PrivateSubnet3
+      UserData:
+        'Fn::Base64': !Sub >
+          #!/bin/bash -ex
+
+          sudo su
+
+          yum localinstall -y
+          https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
+
+          yum install -y mysql-community-server
+
+          systemctl enable mysqld
+
+          systemctl start mysqld
+
+          mysql -u root "-p$(grep -oP '(?<=root@localhost\: )\S+'
+          /var/log/mysqld.log)" -e "ALTER USER 'root'@'localhost' IDENTIFIED BY
+          '${DbPassword}'" --connect-expired-password
+
+          mysql -u root "-p${DbPassword}" -e "CREATE USER '${DbUsername}'@'%'
+          IDENTIFIED BY '${DbPassword}'"
+
+          mysql -u root "-p${DbPassword}" -e "GRANT ALL PRIVILEGES ON *.* TO
+          '${DbUsername}'@'%'"
+
+          mysql -u root "-p${DbPassword}" -e "FLUSH PRIVILEGES"
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 5e440c90-8fc4-429d-98a9-bc9593524b1c
@@ -1331,6 +1404,32 @@ Resources:
           DeviceIndex: '0'
           DeleteOnTermination: 'true'
           SubnetId: !Ref PrivateSubnet2
+      UserData:
+        'Fn::Base64': !Sub >
+          #!/bin/bash -ex
+
+          sudo su
+
+          yum localinstall -y
+          https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
+
+          yum install -y mysql-community-server
+
+          systemctl enable mysqld
+
+          systemctl start mysqld
+
+          mysql -u root "-p$(grep -oP '(?<=root@localhost\: )\S+'
+          /var/log/mysqld.log)" -e "ALTER USER 'root'@'localhost' IDENTIFIED BY
+          '${DbPassword}'" --connect-expired-password
+
+          mysql -u root "-p${DbPassword}" -e "CREATE USER '${DbUsername}'@'%'
+          IDENTIFIED BY '${DbPassword}'"
+
+          mysql -u root "-p${DbPassword}" -e "GRANT ALL PRIVILEGES ON *.* TO
+          '${DbUsername}'@'%'"
+
+          mysql -u root "-p${DbPassword}" -e "FLUSH PRIVILEGES"
     Metadata:
       'AWS::CloudFormation::Designer':
         id: c18cf6c0-ca2f-4d00-b509-0ce66f4586fe
@@ -1353,6 +1452,32 @@ Resources:
           DeviceIndex: '0'
           DeleteOnTermination: 'true'
           SubnetId: !Ref PrivateSubnet1
+      UserData:
+        'Fn::Base64': !Sub >
+          #!/bin/bash -ex
+
+          sudo su
+
+          yum localinstall -y
+          https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
+
+          yum install -y mysql-community-server
+
+          systemctl enable mysqld
+
+          systemctl start mysqld
+
+          mysql -u root "-p$(grep -oP '(?<=root@localhost\: )\S+'
+          /var/log/mysqld.log)" -e "ALTER USER 'root'@'localhost' IDENTIFIED BY
+          '${DbPassword}'" --connect-expired-password
+
+          mysql -u root "-p${DbPassword}" -e "CREATE USER '${DbUsername}'@'%'
+          IDENTIFIED BY '${DbPassword}'"
+
+          mysql -u root "-p${DbPassword}" -e "GRANT ALL PRIVILEGES ON *.* TO
+          '${DbUsername}'@'%'"
+
+          mysql -u root "-p${DbPassword}" -e "FLUSH PRIVILEGES"
     Metadata:
       'AWS::CloudFormation::Designer':
         id: c62eb7c7-6fbd-4af9-809b-81eb1aee160e
