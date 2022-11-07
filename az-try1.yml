@@ -1,0 +1,2860 @@
+Description: >-
+  This template deploys a VPC, with a 3 public and private subnets across 3
+  Availability Zones. It deploys an internet gateway, with a default route on
+  the public subnets. It deploys a NAT gateways (one in each AZ), and default
+  routes for them in the private subnets.
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    946de7bf-f7a2-4e07-a04c-84d2e032a501:
+      size:
+        width: 150
+        height: 150
+      position:
+        x: 330
+        'y': 870
+      z: 1
+      embeds: []
+    b19a9821-d4f9-48bb-9a14-6108d767f67c:
+      size:
+        width: 210
+        height: 150
+      position:
+        x: 70
+        'y': 820
+      z: 1
+      embeds:
+        - 06ea3e6b-cfb2-4636-b5d5-238a901316ff
+        - 6cee71e0-b85a-469b-9756-0f482e058e18
+    f0d08746-bc94-433c-8397-d486668fe209:
+      size:
+        width: 200
+        height: 160
+      position:
+        x: 70
+        'y': 1010
+      z: 1
+      embeds:
+        - 0cef72d6-9562-4f0f-ad1a-7d81f7aff0fe
+        - 62923c3b-a163-46d6-92fb-7b631634f267
+    18406e50-b309-42c9-92d6-085059a99d8b:
+      size:
+        width: 200
+        height: 150
+      position:
+        x: 70
+        'y': 1200
+      z: 1
+      embeds:
+        - d4624451-da38-40f8-b23c-81f07d17ad0d
+        - cfbbb0d5-134e-4801-82e3-bab9f6309027
+    e03bb05d-a75e-4521-99f9-fa99365ba3fb:
+      size:
+        width: 150
+        height: 150
+      position:
+        x: 570
+        'y': 780
+      z: 1
+      embeds:
+        - c62eb7c7-6fbd-4af9-809b-81eb1aee160e
+    74698232-af41-4e46-9917-dd257941c359:
+      size:
+        width: 150
+        height: 150
+      position:
+        x: 570
+        'y': 990
+      z: 1
+      embeds:
+        - c18cf6c0-ca2f-4d00-b509-0ce66f4586fe
+    37e78f58-caa6-49b7-abbd-71b19d948e4d:
+      size:
+        width: 150
+        height: 150
+      position:
+        x: 570
+        'y': 1200
+      z: 1
+      embeds:
+        - 5e440c90-8fc4-429d-98a9-bc9593524b1c
+    8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 330
+        'y': 750
+      z: 1
+      embeds: []
+    6813de72-7558-4d78-a661-f733c162db08:
+      source:
+        id: 946de7bf-f7a2-4e07-a04c-84d2e032a501
+      target:
+        id: 8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c
+      z: 1
+    2ae1f087-f20d-4a0b-8522-cab56f74064e:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 330
+        'y': 1050
+      z: 1
+      embeds: []
+      iscontainedinside:
+        - 946de7bf-f7a2-4e07-a04c-84d2e032a501
+    6cf20b0c-6e02-435c-98c3-a7c90afdc758:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 300
+        'y': 1170
+      z: 1
+      embeds: []
+      iscontainedinside:
+        - 946de7bf-f7a2-4e07-a04c-84d2e032a501
+    650a8dd1-457e-4bab-ae37-21f852e54d89:
+      size:
+        width: 150
+        height: 150
+      position:
+        x: 120
+        'y': 600
+      z: 1
+      embeds:
+        - 0d05cf03-b481-4ae8-bd98-d8f012c2af9a
+      dependson:
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+    0d05cf03-b481-4ae8-bd98-d8f012c2af9a:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 120
+        'y': 630
+      z: 2
+      parent: 650a8dd1-457e-4bab-ae37-21f852e54d89
+      embeds: []
+      iscontainedinside:
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
+      dependson:
+        - 6813de72-7558-4d78-a661-f733c162db08
+        - 8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c
+    25c2e808-d283-46a0-a54e-471c8e15bbdb:
+      size:
+        width: 150
+        height: 150
+      position:
+        x: 780
+        'y': 780
+      z: 1
+      embeds:
+        - b717ca3b-9ef6-4ade-8953-f5891f2e5c6c
+    595557a5-242d-46a2-8486-31967b3f5603:
+      size:
+        width: 150
+        height: 150
+      position:
+        x: 780
+        'y': 990
+      z: 1
+      embeds:
+        - bb411d11-297c-4369-9aed-c16014908b1e
+    fdb290f0-2e88-4281-99e7-edfcae7de440:
+      size:
+        width: 150
+        height: 150
+      position:
+        x: 780
+        'y': 1200
+      z: 1
+      embeds:
+        - 9c703a8f-6092-44c7-aa03-78caa48417d8
+    8cb7e1be-6021-425f-b27c-28732e02c830:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 270
+        'y': 1260
+      z: 1
+      embeds: []
+    8a0c697b-facb-4f74-bc51-4dbc0b05a79b:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 390
+        'y': 1260
+      z: 1
+      embeds: []
+    bb51f609-97d7-4266-af69-bb463a92cfbd:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 480
+        'y': 1260
+      z: 1
+      embeds: []
+    943b1d62-7a26-4a4c-b531-5d85392a99de:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 270
+        'y': 1350
+      z: 1
+      embeds: []
+      dependson:
+        - 6813de72-7558-4d78-a661-f733c162db08
+    601b9619-a592-4b27-ab7e-8717183186c6:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 390
+        'y': 1350
+      z: 1
+      embeds: []
+      dependson:
+        - 6813de72-7558-4d78-a661-f733c162db08
+    0ff1d5c3-b4f9-4d7c-ac2d-fa3e086f9c29:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 480
+        'y': 1350
+      z: 1
+      embeds: []
+      dependson:
+        - 6813de72-7558-4d78-a661-f733c162db08
+    b717ca3b-9ef6-4ade-8953-f5891f2e5c6c:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 810
+        'y': 810
+      z: 2
+      parent: 25c2e808-d283-46a0-a54e-471c8e15bbdb
+      embeds: []
+      isassociatedwith:
+        - 8cb7e1be-6021-425f-b27c-28732e02c830
+      iscontainedinside:
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+    bb411d11-297c-4369-9aed-c16014908b1e:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 810
+        'y': 1020
+      z: 2
+      parent: 595557a5-242d-46a2-8486-31967b3f5603
+      embeds: []
+      isassociatedwith:
+        - 8a0c697b-facb-4f74-bc51-4dbc0b05a79b
+      iscontainedinside:
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+        - 595557a5-242d-46a2-8486-31967b3f5603
+    9c703a8f-6092-44c7-aa03-78caa48417d8:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 810
+        'y': 1230
+      z: 2
+      parent: fdb290f0-2e88-4281-99e7-edfcae7de440
+      embeds: []
+      isassociatedwith:
+        - bb51f609-97d7-4266-af69-bb463a92cfbd
+      iscontainedinside:
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
+    6cee71e0-b85a-469b-9756-0f482e058e18:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 180
+        'y': 890
+      z: 2
+      parent: b19a9821-d4f9-48bb-9a14-6108d767f67c
+      embeds: []
+      iscontainedinside:
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+    62923c3b-a163-46d6-92fb-7b631634f267:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 180
+        'y': 1080
+      z: 2
+      parent: f0d08746-bc94-433c-8397-d486668fe209
+      embeds: []
+      iscontainedinside:
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+    cfbbb0d5-134e-4801-82e3-bab9f6309027:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 200
+        'y': 1280
+      z: 2
+      parent: 18406e50-b309-42c9-92d6-085059a99d8b
+      embeds: []
+      iscontainedinside:
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+    6769ba58-6b00-491b-8b1a-c038d08bf603:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 480
+        'y': 1080
+      z: 1
+      embeds: []
+      iscontainedinside:
+        - 946de7bf-f7a2-4e07-a04c-84d2e032a501
+    5e440c90-8fc4-429d-98a9-bc9593524b1c:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 581.2491038127837
+        'y': 1224.1772453932667
+      z: 2
+      parent: 37e78f58-caa6-49b7-abbd-71b19d948e4d
+      embeds: []
+      iscontainedinside:
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+    c18cf6c0-ca2f-4d00-b509-0ce66f4586fe:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 590
+        'y': 1020
+      z: 2
+      parent: 74698232-af41-4e46-9917-dd257941c359
+      embeds: []
+      iscontainedinside:
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+        - 74698232-af41-4e46-9917-dd257941c359
+    c62eb7c7-6fbd-4af9-809b-81eb1aee160e:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 600
+        'y': 850
+      z: 2
+      parent: e03bb05d-a75e-4521-99f9-fa99365ba3fb
+      embeds: []
+      iscontainedinside:
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+    06ea3e6b-cfb2-4636-b5d5-238a901316ff:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 90
+        'y': 860
+      z: 2
+      parent: b19a9821-d4f9-48bb-9a14-6108d767f67c
+      embeds: []
+      isassociatedwith:
+        - 6769ba58-6b00-491b-8b1a-c038d08bf603
+      iscontainedinside:
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
+    0cef72d6-9562-4f0f-ad1a-7d81f7aff0fe:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 90
+        'y': 1040
+      z: 2
+      parent: f0d08746-bc94-433c-8397-d486668fe209
+      embeds: []
+      isassociatedwith:
+        - 6769ba58-6b00-491b-8b1a-c038d08bf603
+      iscontainedinside:
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
+    d4624451-da38-40f8-b23c-81f07d17ad0d:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 90
+        'y': 1230
+      z: 2
+      parent: 18406e50-b309-42c9-92d6-085059a99d8b
+      embeds: []
+      isassociatedwith:
+        - 6769ba58-6b00-491b-8b1a-c038d08bf603
+      iscontainedinside:
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - 18406e50-b309-42c9-92d6-085059a99d8b
+    1eafe520-eef0-44ed-a4fa-e6e0dbd50eda:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -40
+        'y': 1230
+      z: 0
+      embeds: []
+      isassociatedwith:
+        - d4624451-da38-40f8-b23c-81f07d17ad0d
+      dependson:
+        - 8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c
+    b07aa4b0-58bd-4262-a09c-846a4a0117b7:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -40
+        'y': 860
+      z: 0
+      embeds: []
+      isassociatedwith:
+        - 06ea3e6b-cfb2-4636-b5d5-238a901316ff
+      dependson:
+        - 8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c
+    2c665fb3-b386-4587-870e-f7396781f854:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -40
+        'y': 1040
+      z: 0
+      embeds: []
+      isassociatedwith:
+        - 0cef72d6-9562-4f0f-ad1a-7d81f7aff0fe
+      dependson:
+        - 8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c
+Parameters:
+  EnvironmentName:
+    Description: An environment name that is prefixed to resource names
+    Type: String
+    Default: MyStack
+  VpcCIDR:
+    Type: String
+    Default: 10.1.0.0/16
+  PublicSubnet1CIDR:
+    Type: String
+    Default: 10.1.1.0/24
+  PublicSubnet2CIDR:
+    Type: String
+    Default: 10.1.2.0/24
+  PublicSubnet3CIDR:
+    Type: String
+    Default: 10.1.3.0/24
+  PrivateSubnet1CIDR:
+    Type: String
+    Default: 10.1.10.0/24
+  PrivateSubnet2CIDR:
+    Type: String
+    Default: 10.1.20.0/24
+  PrivateSubnet3CIDR:
+    Type: String
+    Default: 10.1.30.0/24
+  InstanceType:
+    Description: WebServer EC2 instance type
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t1.micro
+      - t2.nano
+      - t2.micro
+      - t2.small
+    ConstraintDescription: must be a valid EC2 instance type.
+  KeyName:
+    Description: Name of an EC2 KeyPair to enable SSH access to the instance.
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    ConstraintDescription: must be the name of an existing EC2 KeyPair.
+  SSHLocation:
+    Description: ' The IP address range that can be used to access the web server using SSH.'
+    Type: String
+    MinLength: '9'
+    MaxLength: '18'
+    Default: 0.0.0.0/0
+    AllowedPattern: '(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})'
+    ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
+  DbUsername:
+    Description: The datbaase master user name
+    Type: String
+    Default: root
+  DbPassword:
+    Description: The database master password
+    Type: String
+    Default: 'Ck41T@J6%H0aZol#'
+Resources:
+  VPC:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: !Ref VpcCIDR
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} VPC'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 946de7bf-f7a2-4e07-a04c-84d2e032a501
+  PublicSubnet1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC
+      AvailabilityZone: !Select 
+        - 0
+        - !GetAZs ''
+      CidrBlock: !Ref PublicSubnet1CIDR
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Public Subnet in AZ1'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: b19a9821-d4f9-48bb-9a14-6108d767f67c
+  PublicSubnet2:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC
+      AvailabilityZone: !Select 
+        - 1
+        - !GetAZs ''
+      CidrBlock: !Ref PublicSubnet2CIDR
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Public Subnet in AZ2'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: f0d08746-bc94-433c-8397-d486668fe209
+  PublicSubnet3:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC
+      AvailabilityZone: !Select 
+        - 2
+        - !GetAZs ''
+      CidrBlock: !Ref PublicSubnet3CIDR
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Public Subnet in AZ3'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 18406e50-b309-42c9-92d6-085059a99d8b
+  PrivateSubnet1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC
+      AvailabilityZone: !Select 
+        - 0
+        - !GetAZs ''
+      CidrBlock: !Ref PrivateSubnet1CIDR
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Subnet in AZ1'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: e03bb05d-a75e-4521-99f9-fa99365ba3fb
+  PrivateSubnet2:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC
+      AvailabilityZone: !Select 
+        - 1
+        - !GetAZs ''
+      CidrBlock: !Ref PrivateSubnet2CIDR
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Subnet in AZ2'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 74698232-af41-4e46-9917-dd257941c359
+  PrivateSubnet3:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC
+      AvailabilityZone: !Select 
+        - 2
+        - !GetAZs ''
+      CidrBlock: !Ref PrivateSubnet3CIDR
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Subnet in AZ3'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 37e78f58-caa6-49b7-abbd-71b19d948e4d
+  InternetGateway:
+    Type: 'AWS::EC2::InternetGateway'
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Internet Gateway'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 8a30c9c5-2834-46a1-ab7f-0aa36b9cb20c
+  VPC2IG:
+    Type: 'AWS::EC2::VPCGatewayAttachment'
+    Properties:
+      InternetGatewayId: !Ref InternetGateway
+      VpcId: !Ref VPC
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 6813de72-7558-4d78-a661-f733c162db08
+  PublicServersSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref VPC
+      GroupDescription: 'Allow access from HTTP, SSH and ICMP traffic'
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId: !Ref JumpBoxSG
+        - IpProtocol: icmp
+          FromPort: 8
+          ToPort: -1
+          CidrIp: 10.1.0.0/16
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Public Servers SG'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 2ae1f087-f20d-4a0b-8522-cab56f74064e
+  PrivateServersSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref VPC
+      GroupDescription: 'Allow access from MySQL, SSH and ICMP traffic'
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          SourceSecurityGroupId: !Ref PublicServersSG
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId: !Ref JumpBoxSG
+        - IpProtocol: icmp
+          FromPort: 8
+          ToPort: -1
+          CidrIp: 10.1.0.0/16
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Servers SG'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 6cf20b0c-6e02-435c-98c3-a7c90afdc758
+  PublicRT:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Public Route Table'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 650a8dd1-457e-4bab-ae37-21f852e54d89
+    DependsOn:
+      - PublicSubnet1
+      - PublicSubnet2
+      - PublicSubnet3
+  PublicRoute:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref PublicRT
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Public Route'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 0d05cf03-b481-4ae8-bd98-d8f012c2af9a
+    DependsOn:
+      - VPC2IG
+      - InternetGateway
+  PrivateRT1:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Routing Table in AZ1'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 25c2e808-d283-46a0-a54e-471c8e15bbdb
+  PrivateRT2:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Routing Table in AZ2'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 595557a5-242d-46a2-8486-31967b3f5603
+  PrivateRT3:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Routing Table in AZ3'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: fdb290f0-2e88-4281-99e7-edfcae7de440
+  NATG1:
+    Type: 'AWS::EC2::NatGateway'
+    Properties:
+      AllocationId: !GetAtt NATG1EIP.AllocationId
+      SubnetId: !Ref PublicSubnet1
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} NAT Gateway in AZ1'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 8cb7e1be-6021-425f-b27c-28732e02c830
+  NATG2:
+    Type: 'AWS::EC2::NatGateway'
+    Properties:
+      AllocationId: !GetAtt NATG2EIP.AllocationId
+      SubnetId: !Ref PublicSubnet2
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} NAT Gateway in AZ2'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 8a0c697b-facb-4f74-bc51-4dbc0b05a79b
+  NATG3:
+    Type: 'AWS::EC2::NatGateway'
+    Properties:
+      AllocationId: !GetAtt NATG3EIP.AllocationId
+      SubnetId: !Ref PublicSubnet3
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} NAT Gateway in AZ3'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: bb51f609-97d7-4266-af69-bb463a92cfbd
+  NATG1EIP:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: VPC2IG
+    Properties:
+      Domain: vpc
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} EIP in AZ3'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 943b1d62-7a26-4a4c-b531-5d85392a99de
+  NATG2EIP:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: VPC2IG
+    Properties:
+      Domain: vpc
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} EIP in AZ3'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 601b9619-a592-4b27-ab7e-8717183186c6
+  NATG3EIP:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: VPC2IG
+    Properties:
+      Domain: vpc
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} EIP in AZ3'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 0ff1d5c3-b4f9-4d7c-ac2d-fa3e086f9c29
+  PrivateRoute1:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref PrivateRT1
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId: !Ref NATG1
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Route in AZ1'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: b717ca3b-9ef6-4ade-8953-f5891f2e5c6c
+  PrivateSubnet1RTAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      RouteTableId: !Ref PrivateRT1
+      SubnetId: !Ref PrivateSubnet1
+  PrivateRoute2:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref PrivateRT2
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId: !Ref NATG2
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Route in AZ2'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: bb411d11-297c-4369-9aed-c16014908b1e
+  PrivateSubnet2RTAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      RouteTableId: !Ref PrivateRT2
+      SubnetId: !Ref PrivateSubnet2
+  PrivateRoute3:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref PrivateRT3
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId: !Ref NATG3
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} Private Route in AZ3'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 9c703a8f-6092-44c7-aa03-78caa48417d8
+  PrivateSubnet3RTAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      RouteTableId: !Ref PrivateRT3
+      SubnetId: !Ref PrivateSubnet3
+  WebServer1:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      KeyName: !Ref KeyName
+      NetworkInterfaces:
+        - GroupSet:
+            - !Ref PublicServersSG
+          AssociatePublicIpAddress: 'true'
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref PublicSubnet1
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} WebServer in AZ1'
+      UserData: !Base64 
+        'Fn::Join':
+          - ''
+          - - |
+              #!/bin/bash -xe
+            - |
+              yum install -y aws-cfn-bootstrap
+            - |
+              # Install the files and packages from the metadata
+            - '/opt/aws/bin/cfn-init -v '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer1 '
+            - '         --configsets All '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - |+
+
+            - |
+              # Signal the status from cfn-init
+            - '/opt/aws/bin/cfn-signal -e $? '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer1 '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - ''
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 6cee71e0-b85a-469b-9756-0f482e058e18
+      'AWS::CloudFormation::Init':
+        configSets:
+          All:
+            - ConfigureWebserver
+        ConfigureWebServer:
+          packages:
+            yum:
+              httpd: []
+          files:
+            /var/www/html/index.html:
+              content: !Join 
+                - |+
+
+                - - <h1>Web Server launched</h1>
+              mode: '000644'
+              owner: root
+              group: root
+          services:
+            sysvinit:
+              httpd:
+                enabled: 'true'
+                ensureRunning: 'true'
+  WebServer2:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      KeyName: !Ref KeyName
+      NetworkInterfaces:
+        - GroupSet:
+            - !Ref PublicServersSG
+          AssociatePublicIpAddress: 'true'
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref PublicSubnet2
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} WebServer in AZ2'
+      UserData: !Base64 
+        'Fn::Join':
+          - ''
+          - - |
+              #!/bin/bash -xe
+            - |
+              yum install -y aws-cfn-bootstrap
+            - |
+              # Install the files and packages from the metadata
+            - '/opt/aws/bin/cfn-init -v '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer2 '
+            - '         --configsets All '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - |+
+
+            - |
+              # Signal the status from cfn-init
+            - '/opt/aws/bin/cfn-signal -e $? '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer2 '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - ''
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 62923c3b-a163-46d6-92fb-7b631634f267
+      'AWS::CloudFormation::Init':
+        configSets:
+          All:
+            - ConfigureWebserver
+        ConfigureWebServer:
+          packages:
+            yum:
+              httpd: []
+          files:
+            /var/www/html/index.html:
+              content: !Join 
+                - |+
+
+                - - <h1>Web Server launched</h1>
+              mode: '000644'
+              owner: root
+              group: root
+          services:
+            sysvinit:
+              httpd:
+                enabled: 'true'
+                ensureRunning: 'true'
+  WebServer3:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      KeyName: !Ref KeyName
+      NetworkInterfaces:
+        - GroupSet:
+            - !Ref PublicServersSG
+          AssociatePublicIpAddress: 'true'
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref PublicSubnet3
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} WebServer in AZ3'
+      UserData: !Base64 
+        'Fn::Join':
+          - ''
+          - - |
+              #!/bin/bash -xe
+            - |
+              yum install -y aws-cfn-bootstrap
+            - |
+              # Install the files and packages from the metadata
+            - '/opt/aws/bin/cfn-init -v '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer3 '
+            - '         --configsets All '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - |+
+
+            - |
+              # Signal the status from cfn-init
+            - '/opt/aws/bin/cfn-signal -e $? '
+            - '         --stack '
+            - !Ref 'AWS::StackName'
+            - '         --resource WebServer3 '
+            - '         --region '
+            - !Ref 'AWS::Region'
+            - ''
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: cfbbb0d5-134e-4801-82e3-bab9f6309027
+      'AWS::CloudFormation::Init':
+        configSets:
+          All:
+            - ConfigureWebserver
+        ConfigureWebServer:
+          packages:
+            yum:
+              httpd: []
+          files:
+            /var/www/html/index.html:
+              content: !Join 
+                - |+
+
+                - - <h1>Web Server launched</h1>
+              mode: '000644'
+              owner: root
+              group: root
+          services:
+            sysvinit:
+              httpd:
+                enabled: 'true'
+                ensureRunning: 'true'
+  JumpBoxSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref VPC
+      GroupDescription: Allow SSH and ICMP traffic
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref SSHLocation
+        - IpProtocol: icmp
+          FromPort: 8
+          ToPort: -1
+          CidrIp: 0.0.0.0/0
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: !FindInMap 
+            - SubnetConfig
+            - PrivateSubnet1
+            - CIDR
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: !FindInMap 
+            - SubnetConfig
+            - PrivateSubnet2
+            - CIDR
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: !FindInMap 
+            - SubnetConfig
+            - PrivateSubnet3
+            - CIDR
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} JumpBox SG'
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 6769ba58-6b00-491b-8b1a-c038d08bf603
+  DbServer3:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      KeyName: !Ref KeyName
+      NetworkInterfaces:
+        - GroupSet:
+            - !Ref PrivateServersSG
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref PrivateSubnet3
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} DbServer in AZ3'
+      UserData:
+        'Fn::Base64': !Sub >
+          #!/bin/bash -ex
+
+          sudo su
+
+          yum localinstall -y
+          https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
+
+          yum install -y mysql-community-server
+
+          systemctl enable mysqld
+
+          systemctl start mysqld
+
+          mysql -u root "-p$(grep -oP '(?<=root@localhost\: )\S+'
+          /var/log/mysqld.log)" -e "ALTER USER 'root'@'localhost' IDENTIFIED BY
+          '${DbPassword}'" --connect-expired-password
+
+          mysql -u root "-p${DbPassword}" -e "CREATE USER '${DbUsername}'@'%'
+          IDENTIFIED BY '${DbPassword}'"
+
+          mysql -u root "-p${DbPassword}" -e "GRANT ALL PRIVILEGES ON *.* TO
+          '${DbUsername}'@'%'"
+
+          mysql -u root "-p${DbPassword}" -e "FLUSH PRIVILEGES"
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 5e440c90-8fc4-429d-98a9-bc9593524b1c
+  DbServer2:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      KeyName: !Ref KeyName
+      NetworkInterfaces:
+        - GroupSet:
+            - !Ref PrivateServersSG
+          AssociatePublicIpAddress: 'true'
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref PrivateSubnet2
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} DbServer in AZ2'
+      UserData:
+        'Fn::Base64': !Sub >
+          #!/bin/bash -ex
+
+          sudo su
+
+          yum localinstall -y
+          https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
+
+          yum install -y mysql-community-server
+
+          systemctl enable mysqld
+
+          systemctl start mysqld
+
+          mysql -u root "-p$(grep -oP '(?<=root@localhost\: )\S+'
+          /var/log/mysqld.log)" -e "ALTER USER 'root'@'localhost' IDENTIFIED BY
+          '${DbPassword}'" --connect-expired-password
+
+          mysql -u root "-p${DbPassword}" -e "CREATE USER '${DbUsername}'@'%'
+          IDENTIFIED BY '${DbPassword}'"
+
+          mysql -u root "-p${DbPassword}" -e "GRANT ALL PRIVILEGES ON *.* TO
+          '${DbUsername}'@'%'"
+
+          mysql -u root "-p${DbPassword}" -e "FLUSH PRIVILEGES"
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: c18cf6c0-ca2f-4d00-b509-0ce66f4586fe
+  DbServer1:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      KeyName: !Ref KeyName
+      NetworkInterfaces:
+        - GroupSet:
+            - !Ref PrivateServersSG
+          AssociatePublicIpAddress: 'true'
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref PrivateSubnet1
+      Tags:
+        - Key: Name
+          Value: !Sub '${EnvironmentName} DbServer in AZ1'
+      UserData:
+        'Fn::Base64': !Sub >
+          #!/bin/bash -ex
+
+          sudo su
+
+          yum localinstall -y
+          https://dev.mysql.com/get/mysql80-community-release-el9-1.noarch.rpm
+
+          yum install -y mysql-community-server
+
+          systemctl enable mysqld
+
+          systemctl start mysqld
+
+          mysql -u root "-p$(grep -oP '(?<=root@localhost\: )\S+'
+          /var/log/mysqld.log)" -e "ALTER USER 'root'@'localhost' IDENTIFIED BY
+          '${DbPassword}'" --connect-expired-password
+
+          mysql -u root "-p${DbPassword}" -e "CREATE USER '${DbUsername}'@'%'
+          IDENTIFIED BY '${DbPassword}'"
+
+          mysql -u root "-p${DbPassword}" -e "GRANT ALL PRIVILEGES ON *.* TO
+          '${DbUsername}'@'%'"
+
+          mysql -u root "-p${DbPassword}" -e "FLUSH PRIVILEGES"
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: c62eb7c7-6fbd-4af9-809b-81eb1aee160e
+  JumpBox1:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyName
+      SubnetId: !Ref PublicSubnet1
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      SecurityGroupIds:
+        - !Ref JumpBoxSG
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 06ea3e6b-cfb2-4636-b5d5-238a901316ff
+  JumpBox2:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyName
+      SubnetId: !Ref PublicSubnet2
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      SecurityGroupIds:
+        - !Ref JumpBoxSG
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 0cef72d6-9562-4f0f-ad1a-7d81f7aff0fe
+  JumpBox3:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyName
+      SubnetId: !Ref PublicSubnet3
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+      SecurityGroupIds:
+        - !Ref JumpBoxSG
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: d4624451-da38-40f8-b23c-81f07d17ad0d
+  JumpBox3IPAddress:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: InternetGateway
+    Properties:
+      Domain: vpc
+      InstanceId: !Ref JumpBox3
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 1eafe520-eef0-44ed-a4fa-e6e0dbd50eda
+  JumpBox1IPAddress:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: InternetGateway
+    Properties:
+      Domain: vpc
+      InstanceId: !Ref JumpBox1
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: b07aa4b0-58bd-4262-a09c-846a4a0117b7
+  JumpBox2IPAddress:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: InternetGateway
+    Properties:
+      Domain: vpc
+      InstanceId: !Ref JumpBox2
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 2c665fb3-b386-4587-870e-f7396781f854
+Outputs:
+  VPC:
+    Description: A reference to the MyStack VPC
+    Value: !Ref VPC
+  PublicSubnets:
+    Description: A list of the public subnets
+    Value: !Join 
+      - ','
+      - - !Ref PublicSubnet1
+        - !Ref PublicSubnet2
+        - !Ref PublicSubnet3
+  PrivateSubnets:
+    Description: A list of the private subnets
+    Value: !Join 
+      - ','
+      - - !Ref PrivateSubnet1
+        - !Ref PrivateSubnet2
+        - !Ref PrivateSubnet2
+  PublicSubnet1:
+    Description: A reference to the public subnet in the 1st Availability Zone
+    Value: !Ref PublicSubnet1
+  PublicSubnet2:
+    Description: A reference to the public subnet in the 2nd Availability Zone
+    Value: !Ref PublicSubnet2
+  PublicSubnet3:
+    Description: A reference to the public subnet in the 2nd Availability Zone
+    Value: !Ref PublicSubnet3
+  PrivateSubnet1:
+    Description: A reference to the private subnet in the 1st Availability Zone
+    Value: !Ref PrivateSubnet1
+  PrivateSubnet2:
+    Description: A reference to the private subnet in the 2nd Availability Zone
+    Value: !Ref PrivateSubnet2
+  PrivateSubnet3:
+    Description: A reference to the private subnet in the 2nd Availability Zone
+    Value: !Ref PrivateSubnet3
+  PublicServersSG:
+    Description: Security group for public servers
+    Value: !Ref PublicServersSG
+  PrivateServersSG:
+    Description: Security group for private servers
+    Value: !Ref PrivateServersSG
+  URL1:
+    Value: !Join 
+      - ''
+      - - 'http://'
+        - !GetAtt 
+          - WebServer1
+          - PublicIp
+    Description: Newly created application URL
+  URL2:
+    Value: !Join 
+      - ''
+      - - 'http://'
+        - !GetAtt 
+          - WebServer2
+          - PublicIp
+    Description: Newly created application URL
+  URL3:
+    Value: !Join 
+      - ''
+      - - 'http://'
+        - !GetAtt 
+          - WebServer3
+          - PublicIp
+    Description: Newly created application URL
+  JumpBox1IP:
+    Description: IP Address of the JumpBox host
+    Value: !Ref JumpBox1IPAddress
+  JumpBox2IP:
+    Description: IP Address of the JumpBox host
+    Value: !Ref JumpBox2IPAddress
+  JumpBox3IP:
+    Description: IP Address of the JumpBox host
+    Value: !Ref JumpBox3IPAddress
+Mappings:
+  AWSInstanceType2Arch:
+    t1.micro:
+      Arch: HVM64
+    t2.nano:
+      Arch: HVM64
+    t2.micro:
+      Arch: HVM64
+    t2.small:
+      Arch: HVM64
+  AWSRegionArch2AMI:
+    eu-west-1:
+      HVM64: ami-047bb4163c506cd98
+      HVMG2: ami-0a7c483d527806435
+    eu-west-2:
+      HVM64: ami-f976839e
+      HVMG2: NOT_SUPPORTED
+    eu-west-3:
+      HVM64: ami-0ebc281c20e89ba4b
+      HVMG2: NOT_SUPPORTED
+    eu-central-1:
+      HVM64: ami-0233214e13e500f77
+      HVMG2: ami-06223d46a6d0661c7
+  SubnetConfig:
+    VPC:
+      CIDR: 10.1.0.0/16
+    PublicSubnet1:
+      CIDR: 10.1.1.0/24
+    PrivateSubnet1:
+      CIDR: 10.1.10.0/24
+    PublicSubnet2:
+      CIDR: 10.1.2.0/24
+    PrivateSubnet2:
+      CIDR: 10.1.20.0/24
+    PublicSubnet3:
+      CIDR: 10.1.3.0/24
+    PrivateSubnet3:
+      CIDR: 10.1.30.0/24
