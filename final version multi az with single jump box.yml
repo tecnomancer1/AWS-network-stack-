@@ -35,7 +35,6 @@ Metadata:
         'y': 1010
       z: 1
       embeds:
-        - 0cef72d6-9562-4f0f-ad1a-7d81f7aff0fe
         - 62923c3b-a163-46d6-92fb-7b631634f267
     18406e50-b309-42c9-92d6-085059a99d8b:
       size:
@@ -46,7 +45,6 @@ Metadata:
         'y': 1200
       z: 1
       embeds:
-        - d4624451-da38-40f8-b23c-81f07d17ad0d
         - cfbbb0d5-134e-4801-82e3-bab9f6309027
     e03bb05d-a75e-4521-99f9-fa99365ba3fb:
       size:
@@ -140,6 +138,7 @@ Metadata:
       parent: 650a8dd1-457e-4bab-ae37-21f852e54d89
       embeds: []
       iscontainedinside:
+        - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
         - 650a8dd1-457e-4bab-ae37-21f852e54d89
@@ -562,6 +561,7 @@ Metadata:
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
         - 25c2e808-d283-46a0-a54e-471c8e15bbdb
+        - 25c2e808-d283-46a0-a54e-471c8e15bbdb
     bb411d11-297c-4369-9aed-c16014908b1e:
       size:
         width: 60
@@ -575,6 +575,7 @@ Metadata:
       isassociatedwith:
         - 8a0c697b-facb-4f74-bc51-4dbc0b05a79b
       iscontainedinside:
+        - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
         - 595557a5-242d-46a2-8486-31967b3f5603
@@ -884,6 +885,7 @@ Metadata:
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
         - fdb290f0-2e88-4281-99e7-edfcae7de440
+        - fdb290f0-2e88-4281-99e7-edfcae7de440
     6cee71e0-b85a-469b-9756-0f482e058e18:
       size:
         width: 60
@@ -895,6 +897,7 @@ Metadata:
       parent: b19a9821-d4f9-48bb-9a14-6108d767f67c
       embeds: []
       iscontainedinside:
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
@@ -1177,6 +1180,7 @@ Metadata:
         - f0d08746-bc94-433c-8397-d486668fe209
         - f0d08746-bc94-433c-8397-d486668fe209
         - f0d08746-bc94-433c-8397-d486668fe209
+        - f0d08746-bc94-433c-8397-d486668fe209
     cfbbb0d5-134e-4801-82e3-bab9f6309027:
       size:
         width: 60
@@ -1188,6 +1192,7 @@ Metadata:
       parent: 18406e50-b309-42c9-92d6-085059a99d8b
       embeds: []
       iscontainedinside:
+        - 18406e50-b309-42c9-92d6-085059a99d8b
         - 18406e50-b309-42c9-92d6-085059a99d8b
         - 18406e50-b309-42c9-92d6-085059a99d8b
         - 18406e50-b309-42c9-92d6-085059a99d8b
@@ -1458,6 +1463,7 @@ Metadata:
         - 37e78f58-caa6-49b7-abbd-71b19d948e4d
         - 37e78f58-caa6-49b7-abbd-71b19d948e4d
         - 37e78f58-caa6-49b7-abbd-71b19d948e4d
+        - 37e78f58-caa6-49b7-abbd-71b19d948e4d
     c18cf6c0-ca2f-4d00-b509-0ce66f4586fe:
       size:
         width: 60
@@ -1469,6 +1475,7 @@ Metadata:
       parent: 74698232-af41-4e46-9917-dd257941c359
       embeds: []
       iscontainedinside:
+        - 74698232-af41-4e46-9917-dd257941c359
         - 74698232-af41-4e46-9917-dd257941c359
         - 74698232-af41-4e46-9917-dd257941c359
         - 74698232-af41-4e46-9917-dd257941c359
@@ -1703,6 +1710,7 @@ Metadata:
         - e03bb05d-a75e-4521-99f9-fa99365ba3fb
         - e03bb05d-a75e-4521-99f9-fa99365ba3fb
         - e03bb05d-a75e-4521-99f9-fa99365ba3fb
+        - e03bb05d-a75e-4521-99f9-fa99365ba3fb
     06ea3e6b-cfb2-4636-b5d5-238a901316ff:
       size:
         width: 60
@@ -1744,84 +1752,7 @@ Metadata:
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
         - b19a9821-d4f9-48bb-9a14-6108d767f67c
-    0cef72d6-9562-4f0f-ad1a-7d81f7aff0fe:
-      size:
-        width: 60
-        height: 60
-      position:
-        x: 90
-        'y': 1040
-      z: 2
-      parent: f0d08746-bc94-433c-8397-d486668fe209
-      embeds: []
-      isassociatedwith:
-        - 6769ba58-6b00-491b-8b1a-c038d08bf603
-      iscontainedinside:
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-        - f0d08746-bc94-433c-8397-d486668fe209
-    d4624451-da38-40f8-b23c-81f07d17ad0d:
-      size:
-        width: 60
-        height: 60
-      position:
-        x: 90
-        'y': 1230
-      z: 2
-      parent: 18406e50-b309-42c9-92d6-085059a99d8b
-      embeds: []
-      isassociatedwith:
-        - 6769ba58-6b00-491b-8b1a-c038d08bf603
-      iscontainedinside:
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
-        - 18406e50-b309-42c9-92d6-085059a99d8b
+        - b19a9821-d4f9-48bb-9a14-6108d767f67c
     b07aa4b0-58bd-4262-a09c-846a4a0117b7:
       size:
         width: 60
@@ -2646,42 +2577,6 @@ Resources:
     Metadata:
       'AWS::CloudFormation::Designer':
         id: 06ea3e6b-cfb2-4636-b5d5-238a901316ff
-  JumpBox2:
-    Type: 'AWS::EC2::Instance'
-    Properties:
-      InstanceType: !Ref InstanceType
-      KeyName: !Ref KeyName
-      SubnetId: !Ref PublicSubnet2
-      ImageId: !FindInMap 
-        - AWSRegionArch2AMI
-        - !Ref 'AWS::Region'
-        - !FindInMap 
-          - AWSInstanceType2Arch
-          - !Ref InstanceType
-          - Arch
-      SecurityGroupIds:
-        - !Ref JumpBoxSG
-    Metadata:
-      'AWS::CloudFormation::Designer':
-        id: 0cef72d6-9562-4f0f-ad1a-7d81f7aff0fe
-  JumpBox3:
-    Type: 'AWS::EC2::Instance'
-    Properties:
-      InstanceType: !Ref InstanceType
-      KeyName: !Ref KeyName
-      SubnetId: !Ref PublicSubnet3
-      ImageId: !FindInMap 
-        - AWSRegionArch2AMI
-        - !Ref 'AWS::Region'
-        - !FindInMap 
-          - AWSInstanceType2Arch
-          - !Ref InstanceType
-          - Arch
-      SecurityGroupIds:
-        - !Ref JumpBoxSG
-    Metadata:
-      'AWS::CloudFormation::Designer':
-        id: d4624451-da38-40f8-b23c-81f07d17ad0d
   JumpBox1IPAddress:
     Type: 'AWS::EC2::EIP'
     DependsOn: InternetGateway
@@ -2760,12 +2655,6 @@ Outputs:
   JumpBox1IP:
     Description: IP Address of the JumpBox host
     Value: !Ref JumpBox1IPAddress
-  JumpBox2IP:
-    Description: IP Address of the JumpBox host
-    Value: !Ref JumpBox2IPAddress
-  JumpBox3IP:
-    Description: IP Address of the JumpBox host
-    Value: !Ref JumpBox3IPAddress
 Mappings:
   AWSInstanceType2Arch:
     t1.micro:
